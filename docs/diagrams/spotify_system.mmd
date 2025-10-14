@@ -1,29 +1,35 @@
+%%{init: { 'theme': 'base', 'themeVariables': { 'primaryColor': '#1DB954', 'primaryTextColor': '#191414', 'primaryBorderColor': '#1DB954', 'lineColor': '#1DB954', 'fontFamily': 'Inter, Arial' } } }%%
 flowchart TB
-  %% Clients & Edge
+  classDef accent fill:#1DB954,stroke:#1DB954,color:#191414;
+  classDef surface fill:#232323,stroke:#444,color:#fff;
+  classDef neutral fill:#2d2d2d,stroke:#555,color:#eaeaea;
+
   subgraph Clients
     U1[Mobile Apps]
     U2[Web Client]
     U3[Desktop]
   end
+  class U1,U2,U3 surface
 
-  CDN[CDN / Edge Cache]
+  CDN[CDN or Edge Cache]
   API[API Gateway]
+  class CDN,API neutral
 
   U1 --> CDN
   U2 --> CDN
   U3 --> CDN
   CDN --> API
 
-  %% Core Services
   subgraph Core Services
-    AUTH[Auth Service]
-    USER[User Profile Service]
-    CATALOG[Catalog/Metadata Service]
-    PLAY[Playback Service]
-    SEARCH[Search Service]
-    PLAYLIST[Playlist Service]
-    SOCIAL[Social/Engagement Service]
+    AUTH[Auth]
+    USER[User]
+    CATALOG[Catalog]
+    PLAY[Playback]
+    SEARCH[Search]
+    PLAYLIST[Playlist]
+    SOCIAL[Social]
   end
+  class AUTH,USER,CATALOG,PLAY,SEARCH,PLAYLIST,SOCIAL surface
 
   API --> AUTH
   API --> USER
@@ -33,30 +39,30 @@ flowchart TB
   API --> PLAYLIST
   API --> SOCIAL
 
-  %% Recommender Surface
   RECO_API[Recommendations API]
+  class RECO_API accent
   API --> RECO_API
 
-  %% Data Streams
   subgraph Streaming
-    KAFKA[(Kafka / Event Bus)]
-    STREAM_PROC[Stream Processing\n(Flink/Spark)]
+    K[(Kafka)]
+    SPROC[Stream Proc]
   end
+  class K,SPROC neutral
 
-  PLAY --> KAFKA
-  SEARCH --> KAFKA
-  PLAYLIST --> KAFKA
-  SOCIAL --> KAFKA
-  USER --> KAFKA
+  PLAY --> K
+  SEARCH --> K
+  PLAYLIST --> K
+  SOCIAL --> K
+  USER --> K
 
-  %% Storage Layers
   subgraph Storage
-    OLTP[(OLTP DBs)]
-    CACHE[(Redis / Memcached)]
-    FEATURE_STORE[Feature Store]
-    OLAP[(Data Lake/Lakehouse\nS3/ADLS + Parquet)]
-    WAREHOUSE[(Warehouse\nBigQuery/Snowflake/Redshift)]
+    OLTP[(OLTP)]
+    CACHE[(Cache)]
+    FEATS[Feature Store]
+    OLAP[(Data Lake)]
+    WH[(Warehouse)]
   end
+  class OLTP,CACHE,FEATS,OLAP,WH neutral
 
   USER --> OLTP
   CATALOG --> OLTP
@@ -64,38 +70,27 @@ flowchart TB
   SOCIAL --> OLTP
   RECO_API --> CACHE
 
-  %% Offline/Online ML
-  subgraph ML Platform
-    TRAIN[Model Training Pipelines\n(Spark/Databricks/MLFlow)]
-    EXP[Experiment Tracking / A/B]
-    MODEL_REG[Model Registry]
-    ONLINE_FEATS[Online Features]
-    OFFLINE_FEATS[Offline Features]
-    RANK[Online Ranking Service]
+  subgraph ML
+    TRAIN[Training]
+    REG[Model Registry]
+    RANK[Online Ranker]
   end
+  class TRAIN,REG,RANK surface
 
-  KAFKA --> STREAM_PROC --> ONLINE_FEATS --> FEATURE_STORE
-  OLTP --> OFFLINE_FEATS --> FEATURE_STORE
-  FEATURE_STORE --> TRAIN
+  K --> SPROC --> FEATS
+  OLTP --> FEATS
+  FEATS --> TRAIN
   OLAP --> TRAIN
-  TRAIN --> MODEL_REG --> RANK
-  RANK --> RECO_API
+  TRAIN --> REG --> RANK --> RECO_API
 
-  %% Batch Ingestion
-  INGEST[Batch Ingestion (ETL/ELT)]
-  CATALOG --> INGEST
-  PLAYLIST --> INGEST
-  SOCIAL --> INGEST
-  INGEST --> OLAP
-  STREAM_PROC --> OLAP
+  ING[Batch ETL]
+  class ING surface
+  CATALOG --> ING
+  PLAYLIST --> ING
+  SOCIAL --> ING
+  ING --> OLAP
+  SPROC --> OLAP
 
-  %% Analytics & BI
-  BI[BI / Dashboards]
-  OLAP --> WAREHOUSE --> BI
-
-  %% Monitoring
-  LOGS[Logs/Tracing/Metrics]
-  API --> LOGS
-  RECO_API --> LOGS
-  RANK --> LOGS
-  TRAIN --> LOGS
+  BI[BI and Dashboards]
+  class BI accent
+  OLAP --> WH --> BI

@@ -2,136 +2,17 @@
 
 This architecture implements an end-to-end pipeline from ETL to NLP feature extraction, mood-aware recommender, and reporting/dashboard.
 
-```mermaid
-flowchart LR
-    subgraph Ingestion[ETL Ingestion]
-        A[Spotify Metadata<br/>Tracks, Playlists, Audio Features] -->|API/Export| B[Raw Zone]
-        C[Lyrics Source<br/>(Genius or dataset)] --> B
-        D[Social Sentiment<br/>(Reddit or similar aggregates)] --> B
-    end
+![ETL -> NLP -> Recommender -> Dashboard](docs/diagrams/img/mood_reco_workflow.png)
 
-    subgraph Processing[Processing]
-        B --> E[Clean and Normalize]
-        E --> F[Entity Store<br/>SQLite or Postgres]
-        F --> G[NLP: Sentiment and Emotion<br/>Transformers]
-        F --> H[Feature Engineering<br/>Content and CF features]
-        G --> I[Mood Features]
-        H --> J[User and Item Representations]
-    end
-
-    subgraph Modeling[Recommender]
-        J --> K[Baseline Recommender<br/>(CF or content-based)]
-        I --> L[Mood Re-Ranker]
-        K --> L
-        L --> M[Recommendation API<br/>(Batch or Notebook)]
-    end
-
-    subgraph Reporting[Analytics and Dashboard]
-        M --> N[Predictions Store]
-        F --> O[BI Dataset]
-        N --> O
-        O --> P[Power BI Dashboard]
-    end
-```
+Source (Mermaid): `docs/diagrams/mood_reco_workflow.mmd`
 
 ## Realistic Spotify-style Platform Architecture
-Embed the more complete reference diagram from `docs/diagrams/spotify_system.mmd` in supporting docs or render via Mermaid-compatible viewers.
 
-```mermaid
-flowchart TB
-  subgraph Clients
-    U1[Mobile Apps]
-    U2[Web Client]
-    U3[Desktop]
-  end
-  CDN[CDN or Edge Cache]
-  API[API Gateway]
-  U1 --> CDN
-  U2 --> CDN
-  U3 --> CDN
-  CDN --> API
-  subgraph Core Services
-    AUTH[Auth]
-    USER[User]
-    CATALOG[Catalog]
-    PLAY[Playback]
-    SEARCH[Search]
-    PLAYLIST[Playlist]
-    SOCIAL[Social]
-  end
-  API --> AUTH
-  API --> USER
-  API --> CATALOG
-  API --> PLAY
-  API --> SEARCH
-  API --> PLAYLIST
-  API --> SOCIAL
-  RECO_API[Recommendations API]
-  API --> RECO_API
-  subgraph Streaming
-    K[(Kafka)]
-    SPROC[Stream Proc]
-  end
-  PLAY --> K
-  SEARCH --> K
-  PLAYLIST --> K
-  SOCIAL --> K
-  USER --> K
-  subgraph Storage
-    OLTP[(OLTP)]
-    CACHE[(Cache)]
-    FEATS[Feature Store]
-    OLAP[(Data Lake)]
-    WH[(Warehouse)]
-  end
-  USER --> OLTP
-  CATALOG --> OLTP
-  PLAYLIST --> OLTP
-  SOCIAL --> OLTP
-  RECO_API --> CACHE
-  subgraph ML
-    TRAIN[Training]
-    REG[Model Registry]
-    RANK[Online Ranker]
-  end
-  K --> SPROC --> FEATS
-  OLTP --> FEATS
-  FEATS --> TRAIN
-  OLAP --> TRAIN
-  TRAIN --> REG --> RANK --> RECO_API
-  ING[Batch ETL]
-  CATALOG --> ING
-  PLAYLIST --> ING
-  SOCIAL --> ING
-  ING --> OLAP
-  SPROC --> OLAP
-  BI[BI and Dashboards]
-  OLAP --> WH --> BI
-```
+![Spotify-style platform architecture](docs/diagrams/img/spotify_system.png)
 
-## Mood-Aware Workflow
-The mood-aware flow is also available as `docs/diagrams/mood_reco_workflow.mmd`.
+Source (Mermaid): `docs/diagrams/spotify_system.mmd`
 
-```mermaid
-flowchart LR
-  SPOT[Spotify Metadata] --> RAW[Raw Zone]
-  LYR[Lyrics Dataset] --> RAW
-  SOC[Social Sentiment Aggregates] --> RAW
-  RAW --> CLEAN[Clean and Normalize]
-  CLEAN --> SQL[SQLite or Postgres]
-  SQL --> NLP[Sentiment and Emotion<br/>Transformers]
-  NLP --> MOOD[Track or Playlist Mood Features]
-  SQL --> FEATS[Feature Engineering<br/>Audio - Lyrics - Interactions]
-  FEATS --> REPRS[User and Item Representations]
-  REPRS --> BASE[Baseline Recommender<br/>CF or Content]
-  MOOD --> RERANK[Mood-Aware Re-Ranker]
-  BASE --> RERANK
-  RERANK --> PRED[Predictions Store]
-  PRED --> DASH[Power BI Dashboard]
-  RERANK --> NB[Batch Notebook or API]
-```
-
-## Images (rendered by CI)
+## Images
 - Spotify-style platform (PNG): `docs/diagrams/img/spotify_system.png`
 - Mood-aware workflow (PNG): `docs/diagrams/img/mood_reco_workflow.png`
 

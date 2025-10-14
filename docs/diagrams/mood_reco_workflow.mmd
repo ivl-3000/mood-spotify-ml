@@ -1,27 +1,60 @@
+%%{init: { 'theme': 'base', 'themeVariables': { 'primaryColor': '#1DB954', 'primaryTextColor': '#191414', 'primaryBorderColor': '#1DB954', 'lineColor': '#1DB954', 'fontFamily': 'Inter, Arial' } } }%%
 flowchart LR
+  classDef accent fill:#1DB954,stroke:#1DB954,color:#191414;
+  classDef surface fill:#232323,stroke:#444,color:#fff;
+  classDef neutral fill:#2d2d2d,stroke:#555,color:#eaeaea;
+
   %% Ingestion
-  SPOT[Spotify Metadata] --> RAW[Raw Zone]
-  LYR[Lyrics Dataset] --> RAW
-  SOC[Social Sentiment Aggregates] --> RAW
+  SPOT[Spotify Metadata]
+  LYR[Lyrics Dataset]
+  SOC[Social Sentiment Aggregates]
+  RAW[Raw Zone]
+  class SPOT,LYR,SOC surface
+  class RAW neutral
+  SPOT --> RAW
+  LYR --> RAW
+  SOC --> RAW
 
   %% Processing
-  RAW --> CLEAN[Clean and Normalize]
-  CLEAN --> SQL[SQLite or Postgres]
+  CLEAN[Clean and Normalize]
+  SQL[SQLite or Postgres]
+  class CLEAN surface
+  class SQL neutral
+  RAW --> CLEAN
+  CLEAN --> SQL
 
   %% NLP
-  SQL --> NLP[Sentiment and Emotion<br/>Transformers]
-  NLP --> MOOD[Track or Playlist Mood Features]
+  NLP[Sentiment and Emotion<br/>Transformers]
+  MOOD[Track or Playlist Mood Features]
+  class NLP accent
+  class MOOD surface
+  SQL --> NLP
+  NLP --> MOOD
 
   %% Features
-  SQL --> FEATS[Feature Engineering<br/>Audio - Lyrics - Interactions]
-  FEATS --> REPRS[User and Item Representations]
+  FEATS[Feature Engineering<br/>Audio - Lyrics - Interactions]
+  REPRS[User and Item Representations]
+  class FEATS surface
+  class REPRS neutral
+  SQL --> FEATS
+  FEATS --> REPRS
 
   %% Modeling
-  REPRS --> BASE[Baseline Recommender<br/>CF or Content]
-  MOOD --> RERANK[Mood-Aware Re-Ranker]
+  BASE[Baseline Recommender<br/>CF or Content]
+  RERANK[Mood-Aware Re-Ranker]
+  class BASE surface
+  class RERANK accent
+  REPRS --> BASE
+  MOOD --> RERANK
   BASE --> RERANK
 
   %% Serving
-  RERANK --> PRED[Predictions Store]
-  PRED --> DASH[Power BI Dashboard]
-  RERANK --> NB[Batch Notebook or API]
+  PRED[Predictions Store]
+  DASH[Power BI Dashboard]
+  NB[Batch Notebook or API]
+  class PRED neutral
+  class DASH accent
+  class NB surface
+  RERANK --> PRED
+  PRED --> DASH
+  RERANK --> NB
