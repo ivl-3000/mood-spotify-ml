@@ -1,0 +1,27 @@
+flowchart LR
+  %% Ingestion
+  SPOT[Spotify Metadata] --> RAW[Raw Zone]
+  LYR[Lyrics Dataset] --> RAW
+  SOC[Social Sentiment Aggregates] --> RAW
+
+  %% Processing
+  RAW --> CLEAN[Clean & Normalize]
+  CLEAN --> SQL[SQLite/Postgres]
+
+  %% NLP
+  SQL --> NLP[Sentiment & Emotion\n(Transformers)]
+  NLP --> MOOD[Track/Playlist Mood Features]
+
+  %% Features
+  SQL --> FEATS[Feature Engineering\n(Audio/Lyrics/Interactions)]
+  FEATS --> REPRS[User/Item Representations]
+
+  %% Modeling
+  REPRS --> BASE[Baseline Recommender\n(CF/Content)]
+  MOOD --> RERANK[Mood-Aware Re-Ranker]
+  BASE --> RERANK
+
+  %% Serving
+  RERANK --> PRED[Predictions Store]
+  PRED --> DASH[Power BI Dashboard]
+  RERANK --> NB[Batch Notebook/API]

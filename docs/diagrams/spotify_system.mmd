@@ -1,0 +1,101 @@
+flowchart TB
+  %% Clients & Edge
+  subgraph Clients
+    U1[Mobile Apps]
+    U2[Web Client]
+    U3[Desktop]
+  end
+
+  CDN[CDN / Edge Cache]
+  API[API Gateway]
+
+  U1 --> CDN
+  U2 --> CDN
+  U3 --> CDN
+  CDN --> API
+
+  %% Core Services
+  subgraph Core Services
+    AUTH[Auth Service]
+    USER[User Profile Service]
+    CATALOG[Catalog/Metadata Service]
+    PLAY[Playback Service]
+    SEARCH[Search Service]
+    PLAYLIST[Playlist Service]
+    SOCIAL[Social/Engagement Service]
+  end
+
+  API --> AUTH
+  API --> USER
+  API --> CATALOG
+  API --> PLAY
+  API --> SEARCH
+  API --> PLAYLIST
+  API --> SOCIAL
+
+  %% Recommender Surface
+  RECO_API[Recommendations API]
+  API --> RECO_API
+
+  %% Data Streams
+  subgraph Streaming
+    KAFKA[(Kafka / Event Bus)]
+    STREAM_PROC[Stream Processing\n(Flink/Spark)]
+  end
+
+  PLAY --> KAFKA
+  SEARCH --> KAFKA
+  PLAYLIST --> KAFKA
+  SOCIAL --> KAFKA
+  USER --> KAFKA
+
+  %% Storage Layers
+  subgraph Storage
+    OLTP[(OLTP DBs)]
+    CACHE[(Redis / Memcached)]
+    FEATURE_STORE[Feature Store]
+    OLAP[(Data Lake/Lakehouse\nS3/ADLS + Parquet)]
+    WAREHOUSE[(Warehouse\nBigQuery/Snowflake/Redshift)]
+  end
+
+  USER --> OLTP
+  CATALOG --> OLTP
+  PLAYLIST --> OLTP
+  SOCIAL --> OLTP
+  RECO_API --> CACHE
+
+  %% Offline/Online ML
+  subgraph ML Platform
+    TRAIN[Model Training Pipelines\n(Spark/Databricks/MLFlow)]
+    EXP[Experiment Tracking / A/B]
+    MODEL_REG[Model Registry]
+    ONLINE_FEATS[Online Features]
+    OFFLINE_FEATS[Offline Features]
+    RANK[Online Ranking Service]
+  end
+
+  KAFKA --> STREAM_PROC --> ONLINE_FEATS --> FEATURE_STORE
+  OLTP --> OFFLINE_FEATS --> FEATURE_STORE
+  FEATURE_STORE --> TRAIN
+  OLAP --> TRAIN
+  TRAIN --> MODEL_REG --> RANK
+  RANK --> RECO_API
+
+  %% Batch Ingestion
+  INGEST[Batch Ingestion (ETL/ELT)]
+  CATALOG --> INGEST
+  PLAYLIST --> INGEST
+  SOCIAL --> INGEST
+  INGEST --> OLAP
+  STREAM_PROC --> OLAP
+
+  %% Analytics & BI
+  BI[BI / Dashboards]
+  OLAP --> WAREHOUSE --> BI
+
+  %% Monitoring
+  LOGS[Logs/Tracing/Metrics]
+  API --> LOGS
+  RECO_API --> LOGS
+  RANK --> LOGS
+  TRAIN --> LOGS
