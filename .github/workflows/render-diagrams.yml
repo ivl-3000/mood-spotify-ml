@@ -5,6 +5,7 @@ on:
     paths:
       - 'docs/diagrams/*.mmd'
       - 'docs/Architecture.md'
+      - 'docs/ERD.md'
       - '.github/workflows/render-diagrams.yml'
   workflow_dispatch: {}
 
@@ -33,6 +34,25 @@ jobs:
           mkdir -p docs/diagrams/img
           mmdc -i docs/diagrams/spotify_system.mmd -o docs/diagrams/img/spotify_system.png -b transparent || true
           mmdc -i docs/diagrams/mood_reco_workflow.mmd -o docs/diagrams/img/mood_reco_workflow.png -b transparent || true
+          mmdc -i docs/diagrams/spotify_erd.mmd -o docs/diagrams/img/spotify_erd.png -b transparent || true
+          mmdc -e png -i <(printf '%s' "flowchart LR
+  U[Users & Clients] --> API[API Gateway]
+  API --> PLAY[Playback]
+  API --> SEARCH[Search]
+  API --> PLAYLIST[Playlist]
+  API --> RECO[Recommendations API]
+
+  PLAY & SEARCH & PLAYLIST --> K[(Kafka)]
+  K --> SPROC[Stream Proc]
+  SPROC --> FEATS[Feature Store]
+
+  DB[(OLTP)] --> FEATS
+  FEATS --> TRAIN[Model Training]
+  TRAIN --> REG[Model Registry] --> RANK[Online Ranker] --> RECO
+
+  RECO --> DASH[Predictions/Telemetry]
+  DASH --> BI[Power BI]
+") -o docs/diagrams/img/spotify_workflow.png -b transparent || true
 
       - name: Commit PNGs
         uses: stefanzweifel/git-auto-commit-action@v5
