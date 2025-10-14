@@ -117,6 +117,10 @@ flowchart LR
   RERANK --> NB[Batch Notebook/API]
 ```
 
+## Images (rendered by CI)
+- Spotify-style platform (PNG): `docs/diagrams/img/spotify_system.png`
+- Mood-aware workflow (PNG): `docs/diagrams/img/mood_reco_workflow.png`
+
 ## Components
 - ETL: Batch ingestion of Spotify metadata, lyrics, and social aggregates into a raw zone; cleaning and normalization into `SQLite/Postgres`.
 - NLP: Hugging Face transformers for sentiment/emotion classification on lyrics; aggregation to track and playlist mood features.
