@@ -9,15 +9,15 @@ flowchart LR
   CLEAN --> SQL[SQLite/Postgres]
 
   %% NLP
-  SQL --> NLP[Sentiment & Emotion\n(Transformers)]
+  SQL --> NLP[Sentiment and Emotion\nTransformers]
   NLP --> MOOD[Track/Playlist Mood Features]
 
   %% Features
-  SQL --> FEATS[Feature Engineering\n(Audio/Lyrics/Interactions)]
+  SQL --> FEATS[Feature Engineering\nAudio/Lyrics/Interactions]
   FEATS --> REPRS[User/Item Representations]
 
   %% Modeling
-  REPRS --> BASE[Baseline Recommender\n(CF/Content)]
+  REPRS --> BASE[Baseline Recommender\nCF/Content]
   MOOD --> RERANK[Mood-Aware Re-Ranker]
   BASE --> RERANK
 

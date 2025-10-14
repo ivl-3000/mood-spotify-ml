@@ -13,7 +13,7 @@ flowchart LR
     subgraph Processing[Processing]
         B --> E[Clean & Normalize]
         E --> F[Entity Store\nSQLite/Postgres]
-        F --> G[NLP: Sentiment & Emotion\nTransformers]
+        F --> G[NLP: Sentiment and Emotion\nTransformers]
         F --> H[Feature Engineering\nContent/CF features]
         G --> I[Mood Features]
         H --> J[User/Item Representations]
@@ -105,7 +105,7 @@ flowchart LR
   SOC[Social Sentiment Aggregates] --> RAW
   RAW --> CLEAN[Clean & Normalize]
   CLEAN --> SQL[SQLite/Postgres]
-  SQL --> NLP[Sentiment & Emotion\n(Transformers)]
+  SQL --> NLP[Sentiment and Emotion\nTransformers]
   NLP --> MOOD[Track/Playlist Mood Features]
   SQL --> FEATS[Feature Engineering\n(Audio/Lyrics/Interactions)]
   FEATS --> REPRS[User/Item Representations]
