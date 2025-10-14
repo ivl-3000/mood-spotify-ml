@@ -5,28 +5,28 @@ This architecture implements an end-to-end pipeline from ETL to NLP feature extr
 ```mermaid
 flowchart LR
     subgraph Ingestion[ETL Ingestion]
-        A[Spotify Metadata\nTracks, Playlists, Audio Features] -->|API/Export| B[Raw Zone]
-        C[Lyrics Source\n(Genius or dataset)] --> B
-        D[Social Sentiment\n(Reddit/Twitter aggregates)] --> B
+        A[Spotify Metadata<br/>Tracks, Playlists, Audio Features] -->|API/Export| B[Raw Zone]
+        C[Lyrics Source<br/>(Genius or dataset)] --> B
+        D[Social Sentiment<br/>(Reddit or similar aggregates)] --> B
     end
 
     subgraph Processing[Processing]
-        B --> E[Clean & Normalize]
-        E --> F[Entity Store\nSQLite/Postgres]
-        F --> G[NLP: Sentiment and Emotion\nTransformers]
-        F --> H[Feature Engineering\nContent/CF features]
+        B --> E[Clean and Normalize]
+        E --> F[Entity Store<br/>SQLite or Postgres]
+        F --> G[NLP: Sentiment and Emotion<br/>Transformers]
+        F --> H[Feature Engineering<br/>Content and CF features]
         G --> I[Mood Features]
-        H --> J[User/Item Representations]
+        H --> J[User and Item Representations]
     end
 
     subgraph Modeling[Recommender]
-        J --> K[Baseline Recommender\n(CF / content-based)]
+        J --> K[Baseline Recommender<br/>(CF or content-based)]
         I --> L[Mood Re-Ranker]
         K --> L
-        L --> M[Recommendation API\n(Batch/Notebook)]
+        L --> M[Recommendation API<br/>(Batch or Notebook)]
     end
 
-    subgraph Reporting[Analytics & Dashboard]
+    subgraph Reporting[Analytics and Dashboard]
         M --> N[Predictions Store]
         F --> O[BI Dataset]
         N --> O
@@ -38,15 +38,13 @@ flowchart LR
 Embed the more complete reference diagram from `docs/diagrams/spotify_system.mmd` in supporting docs or render via Mermaid-compatible viewers.
 
 ```mermaid
-%%{init: {'theme': 'default'}}%%
-%% This is a compact inlined view; the full file lives at docs/diagrams/spotify_system.mmd
 flowchart TB
   subgraph Clients
     U1[Mobile Apps]
     U2[Web Client]
     U3[Desktop]
   end
-  CDN[CDN / Edge Cache]
+  CDN[CDN or Edge Cache]
   API[API Gateway]
   U1 --> CDN
   U2 --> CDN
@@ -61,14 +59,24 @@ flowchart TB
     PLAYLIST[Playlist]
     SOCIAL[Social]
   end
-  API --> AUTH & USER & CATALOG & PLAY & SEARCH & PLAYLIST & SOCIAL
+  API --> AUTH
+  API --> USER
+  API --> CATALOG
+  API --> PLAY
+  API --> SEARCH
+  API --> PLAYLIST
+  API --> SOCIAL
   RECO_API[Recommendations API]
   API --> RECO_API
   subgraph Streaming
     K[(Kafka)]
     SPROC[Stream Proc]
   end
-  PLAY & SEARCH & PLAYLIST & SOCIAL & USER --> K
+  PLAY --> K
+  SEARCH --> K
+  PLAYLIST --> K
+  SOCIAL --> K
+  USER --> K
   subgraph Storage
     OLTP[(OLTP)]
     CACHE[(Cache)]
@@ -76,7 +84,10 @@ flowchart TB
     OLAP[(Data Lake)]
     WH[(Warehouse)]
   end
-  USER & CATALOG & PLAYLIST & SOCIAL --> OLTP
+  USER --> OLTP
+  CATALOG --> OLTP
+  PLAYLIST --> OLTP
+  SOCIAL --> OLTP
   RECO_API --> CACHE
   subgraph ML
     TRAIN[Training]
@@ -89,9 +100,12 @@ flowchart TB
   OLAP --> TRAIN
   TRAIN --> REG --> RANK --> RECO_API
   ING[Batch ETL]
-  CATALOG & PLAYLIST & SOCIAL --> ING --> OLAP
+  CATALOG --> ING
+  PLAYLIST --> ING
+  SOCIAL --> ING
+  ING --> OLAP
   SPROC --> OLAP
-  BI[BI/Dashboards]
+  BI[BI and Dashboards]
   OLAP --> WH --> BI
 ```
 
@@ -103,18 +117,18 @@ flowchart LR
   SPOT[Spotify Metadata] --> RAW[Raw Zone]
   LYR[Lyrics Dataset] --> RAW
   SOC[Social Sentiment Aggregates] --> RAW
-  RAW --> CLEAN[Clean & Normalize]
-  CLEAN --> SQL[SQLite/Postgres]
-  SQL --> NLP[Sentiment and Emotion\nTransformers]
-  NLP --> MOOD[Track/Playlist Mood Features]
-  SQL --> FEATS[Feature Engineering\n(Audio/Lyrics/Interactions)]
-  FEATS --> REPRS[User/Item Representations]
-  REPRS --> BASE[Baseline Recommender\n(CF/Content)]
+  RAW --> CLEAN[Clean and Normalize]
+  CLEAN --> SQL[SQLite or Postgres]
+  SQL --> NLP[Sentiment and Emotion<br/>Transformers]
+  NLP --> MOOD[Track or Playlist Mood Features]
+  SQL --> FEATS[Feature Engineering<br/>Audio - Lyrics - Interactions]
+  FEATS --> REPRS[User and Item Representations]
+  REPRS --> BASE[Baseline Recommender<br/>CF or Content]
   MOOD --> RERANK[Mood-Aware Re-Ranker]
   BASE --> RERANK
   RERANK --> PRED[Predictions Store]
   PRED --> DASH[Power BI Dashboard]
-  RERANK --> NB[Batch Notebook/API]
+  RERANK --> NB[Batch Notebook or API]
 ```
 
 ## Images (rendered by CI)

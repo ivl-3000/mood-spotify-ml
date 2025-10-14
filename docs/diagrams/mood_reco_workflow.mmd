@@ -5,23 +5,23 @@ flowchart LR
   SOC[Social Sentiment Aggregates] --> RAW
 
   %% Processing
-  RAW --> CLEAN[Clean & Normalize]
-  CLEAN --> SQL[SQLite/Postgres]
+  RAW --> CLEAN[Clean and Normalize]
+  CLEAN --> SQL[SQLite or Postgres]
 
   %% NLP
-  SQL --> NLP[Sentiment and Emotion\nTransformers]
-  NLP --> MOOD[Track/Playlist Mood Features]
+  SQL --> NLP[Sentiment and Emotion<br/>Transformers]
+  NLP --> MOOD[Track or Playlist Mood Features]
 
   %% Features
-  SQL --> FEATS[Feature Engineering\nAudio/Lyrics/Interactions]
-  FEATS --> REPRS[User/Item Representations]
+  SQL --> FEATS[Feature Engineering<br/>Audio - Lyrics - Interactions]
+  FEATS --> REPRS[User and Item Representations]
 
   %% Modeling
-  REPRS --> BASE[Baseline Recommender\nCF/Content]
+  REPRS --> BASE[Baseline Recommender<br/>CF or Content]
   MOOD --> RERANK[Mood-Aware Re-Ranker]
   BASE --> RERANK
 
   %% Serving
   RERANK --> PRED[Predictions Store]
   PRED --> DASH[Power BI Dashboard]
-  RERANK --> NB[Batch Notebook/API]
+  RERANK --> NB[Batch Notebook or API]
