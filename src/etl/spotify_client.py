@@ -106,34 +106,47 @@ class SpotifyClient:
             
         except requests.RequestException as e:
             self.logger.error(f"API request failed: {e}")
+            if hasattr(e, 'response') and e.response is not None:
+                try:
+                    error_detail = e.response.json()
+                    self.logger.error(f"Error details: {error_detail}")
+                except:
+                    self.logger.error(f"Response text: {e.response.text}")
             return None
     
-    def get_playlist(self, playlist_id: str) -> Optional[Dict]:
+    def get_playlist(self, playlist_id: str, market: str = "US") -> Optional[Dict]:
         """
         Get playlist metadata.
         
         Args:
-            playlist_id: Spotify playlist ID
+            playlist_id: Spotify playlist ID (can be just ID or spotify:playlist:ID format)
+            market: Market code (e.g., "US", "GB")
             
         Returns:
             Playlist data or None if failed
         """
-        return self._make_request(f"playlists/{playlist_id}")
+        # Clean playlist ID (remove spotify:playlist: prefix if present)
+        clean_id = playlist_id.replace("spotify:playlist:", "")
+        params = {"market": market}
+        return self._make_request(f"playlists/{clean_id}", params)
     
-    def get_playlist_tracks(self, playlist_id: str, limit: int = 100, offset: int = 0) -> Optional[Dict]:
+    def get_playlist_tracks(self, playlist_id: str, limit: int = 100, offset: int = 0, market: str = "US") -> Optional[Dict]:
         """
         Get tracks from a playlist.
         
         Args:
-            playlist_id: Spotify playlist ID
+            playlist_id: Spotify playlist ID (can be just ID or spotify:playlist:ID format)
             limit: Number of tracks to retrieve (max 100)
             offset: Offset for pagination
+            market: Market code (e.g., "US", "GB")
             
         Returns:
             Tracks data or None if failed
         """
-        params = {'limit': min(limit, 100), 'offset': offset}
-        return self._make_request(f"playlists/{playlist_id}/tracks", params)
+        # Clean playlist ID (remove spotify:playlist: prefix if present)
+        clean_id = playlist_id.replace("spotify:playlist:", "")
+        params = {'limit': min(limit, 100), 'offset': offset, 'market': market}
+        return self._make_request(f"playlists/{clean_id}/tracks", params)
     
     def get_track_audio_features(self, track_id: str) -> Optional[Dict]:
         """
