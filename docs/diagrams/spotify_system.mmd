@@ -1,0 +1,96 @@
+%%{init: { 'theme': 'base', 'themeVariables': { 'primaryColor': '#1DB954', 'primaryTextColor': '#191414', 'primaryBorderColor': '#1DB954', 'lineColor': '#1DB954', 'fontFamily': 'Inter, Arial' } } }%%
+flowchart TB
+  classDef accent fill:#1DB954,stroke:#1DB954,color:#191414;
+  classDef surface fill:#232323,stroke:#444,color:#fff;
+  classDef neutral fill:#2d2d2d,stroke:#555,color:#eaeaea;
+
+  subgraph Clients
+    U1[Mobile Apps]
+    U2[Web Client]
+    U3[Desktop]
+  end
+  class U1,U2,U3 surface
+
+  CDN[CDN or Edge Cache]
+  API[API Gateway]
+  class CDN,API neutral
+
+  U1 --> CDN
+  U2 --> CDN
+  U3 --> CDN
+  CDN --> API
+
+  subgraph Core Services
+    AUTH[Auth]
+    USER[User]
+    CATALOG[Catalog]
+    PLAY[Playback]
+    SEARCH[Search]
+    PLAYLIST[Playlist]
+    SOCIAL[Social]
+  end
+  class AUTH,USER,CATALOG,PLAY,SEARCH,PLAYLIST,SOCIAL surface
+
+  API --> AUTH
+  API --> USER
+  API --> CATALOG
+  API --> PLAY
+  API --> SEARCH
+  API --> PLAYLIST
+  API --> SOCIAL
+
+  RECO_API[Recommendations API]
+  class RECO_API accent
+  API --> RECO_API
+
+  subgraph Streaming
+    K[(Kafka)]
+    SPROC[Stream Proc]
+  end
+  class K,SPROC neutral
+
+  PLAY --> K
+  SEARCH --> K
+  PLAYLIST --> K
+  SOCIAL --> K
+  USER --> K
+
+  subgraph Storage
+    OLTP[(OLTP)]
+    CACHE[(Cache)]
+    FEATS[Feature Store]
+    OLAP[(Data Lake)]
+    WH[(Warehouse)]
+  end
+  class OLTP,CACHE,FEATS,OLAP,WH neutral
+
+  USER --> OLTP
+  CATALOG --> OLTP
+  PLAYLIST --> OLTP
+  SOCIAL --> OLTP
+  RECO_API --> CACHE
+
+  subgraph ML
+    TRAIN[Training]
+    REG[Model Registry]
+    RANK[Online Ranker]
+  end
+  class TRAIN,REG,RANK surface
+
+  K --> SPROC --> FEATS
+  OLTP --> FEATS
+  FEATS --> TRAIN
+  OLAP --> TRAIN
+  TRAIN --> REG --> RANK --> RECO_API
+
+  ING[Batch ETL]
+  class ING surface
+  CATALOG --> ING
+  PLAYLIST --> ING
+  SOCIAL --> ING
+  ING --> OLAP
+  SPROC --> OLAP
+
+  BI[BI and Dashboards]
+  class BI accent
+  OLAP --> WH --> BI
