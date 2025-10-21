@@ -1,0 +1,33 @@
+{
+  "basic_measures": {
+    "Total Tracks": "COUNTROWS(pbix_tracks_data)",
+    "Average Valence": "AVERAGE(pbix_tracks_data[valence])",
+    "Average Energy": "AVERAGE(pbix_tracks_data[energy])",
+    "Average Sentiment": "AVERAGE(pbix_tracks_data[sentiment_score])",
+    "Average Danceability": "AVERAGE(pbix_tracks_data[danceability])",
+    "Average Tempo": "AVERAGE(pbix_tracks_data[tempo])"
+  },
+  "mood_measures": {
+    "Happy Songs Count": "COUNTROWS(FILTER(pbix_tracks_data, pbix_tracks_data[valence] > 0.7))",
+    "Sad Songs Count": "COUNTROWS(FILTER(pbix_tracks_data, pbix_tracks_data[valence] < 0.3))",
+    "Energetic Songs Count": "COUNTROWS(FILTER(pbix_tracks_data, pbix_tracks_data[energy] > 0.8))",
+    "Chill Songs Count": "COUNTROWS(FILTER(pbix_tracks_data, pbix_tracks_data[energy] < 0.5))",
+    "Happy Songs %": "DIVIDE([Happy Songs Count], [Total Tracks])",
+    "Sad Songs %": "DIVIDE([Sad Songs Count], [Total Tracks])",
+    "Energetic Songs %": "DIVIDE([Energetic Songs Count], [Total Tracks])",
+    "Chill Songs %": "DIVIDE([Chill Songs Count], [Total Tracks])"
+  },
+  "scoring_measures": {
+    "Happiness Score": "pbix_tracks_data[valence] + pbix_tracks_data[sentiment_score]",
+    "Sadness Score": "ABS(pbix_tracks_data[valence] + pbix_tracks_data[sentiment_score])",
+    "Energy Score": "pbix_tracks_data[energy] + pbix_tracks_data[danceability]",
+    "Mood Score": "SWITCH(pbix_tracks_data[mood_category], 'Happy', 1, 'Sad', -1, 'Energetic', 0.8, 'Chill', 0.3, 'Romantic', 0.6, 'Angry', -0.5, 0)"
+  },
+  "analytics_measures": {
+    "Genre Diversity": "DISTINCTCOUNT(pbix_tracks_data[genre])",
+    "Artist Diversity": "DISTINCTCOUNT(pbix_tracks_data[artist_name])",
+    "Average Popularity": "AVERAGE(pbix_tracks_data[popularity])",
+    "High Popularity %": "DIVIDE(COUNTROWS(FILTER(pbix_tracks_data, pbix_tracks_data[popularity] > 80)), [Total Tracks])",
+    "Explicit Content %": "DIVIDE(COUNTROWS(FILTER(pbix_tracks_data, pbix_tracks_data[explicit] = 1)), [Total Tracks])"
+  }
+}
