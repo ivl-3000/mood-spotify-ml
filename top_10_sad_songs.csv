@@ -1,0 +1,11 @@
+track_id,track_name,artist_name,album_name,valence,energy,danceability,tempo,loudness,key,mode,sentiment_score,popularity,genre,duration_ms,explicit,release_date,sadness_score,rank,mood_icon,color
+spotify:track:00000000000000000,Track 1,Megan Thee Stallion,Album 1,0.1,0.1,0.1,200,-20,6,0,-0.8,4,Electronic,215000,0,2022-10-10,0.7000000000000001,1,😢,#4ECDC4
+spotify:track:00000000000000007,Track 8,Lil Nas X,Album 8,0.1,0.9,0.9,60,0,0,1,-0.8,37,Pop,283000,1,2022-07-25,0.7000000000000001,2,😢,#4ECDC4
+spotify:track:00000000000000016,Track 17,Post Malone,Album 17,0.1,0.1,0.1,60,-20,9,0,-0.8,4,R&B,136000,0,2022-10-01,0.7000000000000001,3,😢,#4ECDC4
+spotify:track:00000000000000026,Track 27,The Weeknd,Album 27,0.1,0.1,0.9,200,-20,6,1,-0.8,23,Indie,219000,0,2020-03-07,0.7000000000000001,4,😢,#4ECDC4
+spotify:track:00000000000000028,Track 29,The Kid LAROI,Album 29,0.1,0.1,0.1,60,0,6,1,-0.8,61,Pop,171000,1,2021-05-10,0.7000000000000001,5,😢,#4ECDC4
+spotify:track:00000000000000030,Track 31,The Weeknd,Album 31,0.1,0.1,0.9,60,0,9,0,-0.8,14,Country,251000,1,2023-04-25,0.7000000000000001,6,😢,#4ECDC4
+spotify:track:00000000000000035,Track 36,Ariana Grande,Album 36,0.1,0.1,0.1,60,-20,11,1,-0.8,97,Country,152000,0,2022-01-28,0.7000000000000001,7,😢,#4ECDC4
+spotify:track:00000000000000040,Track 41,Taylor Swift,Album 41,0.1,0.9,0.9,200,-20,8,0,-0.8,54,Pop,214000,1,2021-07-18,0.7000000000000001,8,😢,#4ECDC4
+spotify:track:00000000000000041,Track 42,Ed Sheeran,Album 42,0.1,0.1,0.1,60,-20,6,1,-0.8,22,Electronic,176000,0,2022-06-04,0.7000000000000001,9,😢,#4ECDC4
+spotify:track:00000000000000045,Track 46,Lil Nas X,Album 46,0.1,0.1,0.9,200,0,11,0,-0.8,13,Pop,198000,1,2021-04-10,0.7000000000000001,10,😢,#4ECDC4

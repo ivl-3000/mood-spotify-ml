@@ -1,0 +1,201 @@
+track_id,track_name,artist_name,album_name,valence,energy,danceability,tempo,loudness,key,mode,sentiment_score,popularity,genre,duration_ms,explicit,release_date
+spotify:track:00000000000000000,Track 1,Megan Thee Stallion,Album 1,0.1,0.1,0.1,200,-20,6,0,-0.8,4,Electronic,215000,0,2022-10-10
+spotify:track:00000000000000001,Track 2,Drake,Album 2,0.9,0.1,0.1,60,-20,9,0,0.2,41,Rock,256000,1,2023-03-28
+spotify:track:00000000000000002,Track 3,Drake,Album 3,0.9,0.1,0.1,200,0,1,0,0.2,52,Electronic,286000,1,2024-03-17
+spotify:track:00000000000000003,Track 4,The Weeknd,Album 4,0.1,0.1,0.1,60,-20,1,1,-0.2,3,Rock,208000,1,2021-08-08
+spotify:track:00000000000000004,Track 5,Dua Lipa,Album 5,0.1,0.9,0.1,200,0,6,0,-0.2,72,Pop,205000,1,2022-03-01
+spotify:track:00000000000000005,Track 6,The Kid LAROI,Album 6,0.1,0.9,0.9,60,-20,2,1,-0.2,55,Indie,290000,0,2021-12-11
+spotify:track:00000000000000006,Track 7,Taylor Swift,Album 7,0.1,0.1,0.1,200,-20,0,1,-0.2,29,R&B,224000,0,2024-05-03
+spotify:track:00000000000000007,Track 8,Lil Nas X,Album 8,0.1,0.9,0.9,60,0,0,1,-0.8,37,Pop,283000,1,2022-07-25
+spotify:track:00000000000000008,Track 9,Billie Eilish,Album 9,0.9,0.9,0.9,200,-20,0,1,0.2,27,Hip-Hop,287000,1,2023-08-20
+spotify:track:00000000000000009,Track 10,Megan Thee Stallion,Album 10,0.9,0.1,0.9,60,-20,10,1,0.8,14,Electronic,268000,0,2023-06-01
+spotify:track:00000000000000010,Track 11,Post Malone,Album 11,0.1,0.1,0.1,60,-20,8,1,-0.2,6,Indie,158000,0,2021-03-23
+spotify:track:00000000000000011,Track 12,The Weeknd,Album 12,0.9,0.1,0.9,60,-20,1,0,0.2,12,Indie,178000,0,2024-10-23
+spotify:track:00000000000000012,Track 13,Post Malone,Album 13,0.9,0.1,0.1,60,0,0,0,0.2,90,Alternative,219000,1,2024-06-21
+spotify:track:00000000000000013,Track 14,Ariana Grande,Album 14,0.1,0.1,0.9,200,0,8,0,-0.2,20,Alternative,126000,1,2022-02-22
+spotify:track:00000000000000014,Track 15,The Weeknd,Album 15,0.9,0.1,0.1,200,-20,10,1,0.8,30,Electronic,256000,1,2020-05-21
+spotify:track:00000000000000015,Track 16,Ariana Grande,Album 16,0.9,0.9,0.1,200,-20,2,1,0.2,47,Indie,191000,0,2022-03-18
+spotify:track:00000000000000016,Track 17,Post Malone,Album 17,0.1,0.1,0.1,60,-20,9,0,-0.8,4,R&B,136000,0,2022-10-01
+spotify:track:00000000000000017,Track 18,Olivia Rodrigo,Album 18,0.9,0.9,0.9,60,-20,7,1,0.8,94,Indie,246000,1,2022-11-07
+spotify:track:00000000000000018,Track 19,Post Malone,Album 19,0.9,0.9,0.1,200,0,5,0,0.8,90,Hip-Hop,158000,1,2020-05-05
+spotify:track:00000000000000019,Track 20,The Weeknd,Album 20,0.9,0.1,0.9,60,-20,11,1,0.2,33,Pop,276000,0,2023-06-03
+spotify:track:00000000000000020,Track 21,Post Malone,Album 21,0.9,0.1,0.9,60,-20,10,0,0.8,95,Electronic,164000,1,2021-12-16
+spotify:track:00000000000000021,Track 22,Ed Sheeran,Album 22,0.9,0.9,0.1,60,-20,7,1,0.8,38,Indie,139000,0,2021-09-22
+spotify:track:00000000000000022,Track 23,Drake,Album 23,0.9,0.1,0.1,60,-20,0,0,0.2,46,R&B,149000,1,2023-01-10
+spotify:track:00000000000000023,Track 24,Dua Lipa,Album 24,0.1,0.1,0.9,60,0,7,0,-0.2,39,Alternative,273000,0,2024-12-03
+spotify:track:00000000000000024,Track 25,Taylor Swift,Album 25,0.9,0.9,0.9,60,-20,0,0,0.2,57,R&B,286000,0,2022-03-20
+spotify:track:00000000000000025,Track 26,Bad Bunny,Album 26,0.9,0.1,0.9,200,0,3,0,0.2,15,Hip-Hop,191000,1,2023-11-14
+spotify:track:00000000000000026,Track 27,The Weeknd,Album 27,0.1,0.1,0.9,200,-20,6,1,-0.8,23,Indie,219000,0,2020-03-07
+spotify:track:00000000000000027,Track 28,Drake,Album 28,0.1,0.1,0.9,200,0,9,0,-0.2,54,Pop,175000,0,2021-08-13
+spotify:track:00000000000000028,Track 29,The Kid LAROI,Album 29,0.1,0.1,0.1,60,0,6,1,-0.8,61,Pop,171000,1,2021-05-10
+spotify:track:00000000000000029,Track 30,Post Malone,Album 30,0.1,0.1,0.1,60,-20,7,1,-0.2,98,Electronic,127000,1,2021-10-01
+spotify:track:00000000000000030,Track 31,The Weeknd,Album 31,0.1,0.1,0.9,60,0,9,0,-0.8,14,Country,251000,1,2023-04-25
+spotify:track:00000000000000031,Track 32,Drake,Album 32,0.9,0.9,0.9,60,0,10,0,0.8,46,Indie,153000,0,2023-06-27
+spotify:track:00000000000000032,Track 33,Billie Eilish,Album 33,0.9,0.9,0.1,200,0,5,1,0.8,47,Rock,195000,0,2020-10-01
+spotify:track:00000000000000033,Track 34,Dua Lipa,Album 34,0.1,0.1,0.1,60,0,1,1,-0.2,90,Alternative,282000,0,2020-06-15
+spotify:track:00000000000000034,Track 35,Olivia Rodrigo,Album 35,0.9,0.1,0.1,200,0,9,0,0.8,87,R&B,289000,1,2023-08-25
+spotify:track:00000000000000035,Track 36,Ariana Grande,Album 36,0.1,0.1,0.1,60,-20,11,1,-0.8,97,Country,152000,0,2022-01-28
+spotify:track:00000000000000036,Track 37,Taylor Swift,Album 37,0.9,0.1,0.1,200,-20,10,1,0.2,22,Pop,204000,1,2023-06-08
+spotify:track:00000000000000037,Track 38,The Kid LAROI,Album 38,0.9,0.1,0.1,200,0,4,0,0.8,0,Pop,150000,1,2023-10-17
+spotify:track:00000000000000038,Track 39,The Kid LAROI,Album 39,0.9,0.9,0.1,200,0,9,1,0.2,63,Indie,299000,1,2024-06-24
+spotify:track:00000000000000039,Track 40,Justin Bieber,Album 40,0.9,0.9,0.1,60,-20,1,1,0.8,69,Electronic,144000,1,2024-12-23
+spotify:track:00000000000000040,Track 41,Taylor Swift,Album 41,0.1,0.9,0.9,200,-20,8,0,-0.8,54,Pop,214000,1,2021-07-18
+spotify:track:00000000000000041,Track 42,Ed Sheeran,Album 42,0.1,0.1,0.1,60,-20,6,1,-0.8,22,Electronic,176000,0,2022-06-04
+spotify:track:00000000000000042,Track 43,Ariana Grande,Album 43,0.9,0.9,0.1,60,-20,3,1,0.8,12,Indie,141000,1,2021-12-28
+spotify:track:00000000000000043,Track 44,The Kid LAROI,Album 44,0.1,0.1,0.9,200,-20,6,0,-0.2,88,Electronic,130000,1,2021-04-19
+spotify:track:00000000000000044,Track 45,Drake,Album 45,0.1,0.1,0.1,60,0,1,1,-0.2,87,Rock,121000,0,2020-12-28
+spotify:track:00000000000000045,Track 46,Lil Nas X,Album 46,0.1,0.1,0.9,200,0,11,0,-0.8,13,Pop,198000,1,2021-04-10
+spotify:track:00000000000000046,Track 47,Taylor Swift,Album 47,0.1,0.9,0.1,60,-20,11,1,-0.2,88,Hip-Hop,172000,0,2021-01-26
+spotify:track:00000000000000047,Track 48,Ed Sheeran,Album 48,0.1,0.1,0.9,200,-20,1,1,-0.2,32,Alternative,185000,1,2021-03-15
+spotify:track:00000000000000048,Track 49,The Weeknd,Album 49,0.9,0.9,0.9,60,0,11,1,0.2,15,Country,282000,1,2024-01-17
+spotify:track:00000000000000049,Track 50,Bad Bunny,Album 50,0.9,0.1,0.1,60,-20,0,0,0.8,52,Indie,283000,0,2021-03-20
+spotify:track:00000000000000050,Track 51,Ariana Grande,Album 51,0.9,0.1,0.9,60,0,8,0,0.2,100,Electronic,195000,0,2020-11-12
+spotify:track:00000000000000051,Track 52,Justin Bieber,Album 52,0.9,0.9,0.9,200,0,9,0,0.2,14,Hip-Hop,237000,0,2020-04-04
+spotify:track:00000000000000052,Track 53,Ed Sheeran,Album 53,0.9,0.9,0.1,200,-20,2,1,0.2,12,Electronic,122000,1,2022-10-21
+spotify:track:00000000000000053,Track 54,Doja Cat,Album 54,0.9,0.1,0.1,60,-20,0,1,0.2,84,Country,154000,0,2023-01-24
+spotify:track:00000000000000054,Track 55,Ed Sheeran,Album 55,0.1,0.1,0.1,60,-20,3,1,-0.2,96,Indie,213000,1,2020-06-02
+spotify:track:00000000000000055,Track 56,Lil Nas X,Album 56,0.1,0.1,0.9,60,0,2,0,-0.2,63,Country,231000,1,2020-02-04
+spotify:track:00000000000000056,Track 57,The Weeknd,Album 57,0.1,0.9,0.1,200,-20,3,0,-0.8,7,Alternative,183000,1,2022-09-06
+spotify:track:00000000000000057,Track 58,Megan Thee Stallion,Album 58,0.1,0.9,0.1,200,0,10,1,-0.2,50,Pop,187000,1,2023-03-09
+spotify:track:00000000000000058,Track 59,The Kid LAROI,Album 59,0.1,0.9,0.1,200,-20,2,1,-0.2,15,Pop,170000,1,2020-02-01
+spotify:track:00000000000000059,Track 60,Dua Lipa,Album 60,0.1,0.1,0.9,60,-20,9,1,-0.8,53,Rock,187000,1,2021-06-22
+spotify:track:00000000000000060,Track 61,Ariana Grande,Album 61,0.9,0.9,0.1,200,-20,1,0,0.2,51,Hip-Hop,184000,1,2022-01-07
+spotify:track:00000000000000061,Track 62,Lil Nas X,Album 62,0.1,0.1,0.9,60,-20,2,1,-0.8,16,Pop,161000,1,2023-05-10
+spotify:track:00000000000000062,Track 63,Drake,Album 63,0.1,0.9,0.9,60,0,0,0,-0.8,62,Country,239000,0,2020-10-21
+spotify:track:00000000000000063,Track 64,The Kid LAROI,Album 64,0.9,0.1,0.1,200,-20,5,1,0.2,10,Country,257000,0,2020-02-15
+spotify:track:00000000000000064,Track 65,The Kid LAROI,Album 65,0.9,0.1,0.9,200,0,8,1,0.2,25,Electronic,129000,1,2022-10-24
+spotify:track:00000000000000065,Track 66,Post Malone,Album 66,0.1,0.1,0.1,60,-20,1,0,-0.8,85,Alternative,146000,1,2022-07-01
+spotify:track:00000000000000066,Track 67,Justin Bieber,Album 67,0.9,0.1,0.9,60,-20,4,0,0.2,11,Rock,275000,0,2020-11-22
+spotify:track:00000000000000067,Track 68,Olivia Rodrigo,Album 68,0.1,0.9,0.9,60,-20,1,0,-0.8,47,Pop,265000,0,2021-07-19
+spotify:track:00000000000000068,Track 69,Drake,Album 69,0.1,0.1,0.9,200,0,5,1,-0.2,67,Pop,265000,0,2020-01-27
+spotify:track:00000000000000069,Track 70,Ed Sheeran,Album 70,0.1,0.9,0.9,200,-20,2,0,-0.2,0,Rock,252000,0,2022-10-12
+spotify:track:00000000000000070,Track 71,Dua Lipa,Album 71,0.9,0.9,0.9,200,-20,10,0,0.8,28,R&B,259000,1,2024-03-25
+spotify:track:00000000000000071,Track 72,Megan Thee Stallion,Album 72,0.1,0.1,0.1,60,-20,1,0,-0.2,18,Pop,121000,0,2020-12-26
+spotify:track:00000000000000072,Track 73,Drake,Album 73,0.1,0.1,0.9,60,0,0,1,-0.8,78,Hip-Hop,291000,1,2022-11-23
+spotify:track:00000000000000073,Track 74,Bad Bunny,Album 74,0.9,0.1,0.9,60,0,5,0,0.8,20,Electronic,193000,0,2023-11-28
+spotify:track:00000000000000074,Track 75,Ariana Grande,Album 75,0.1,0.9,0.1,200,0,11,0,-0.2,63,Pop,209000,0,2021-08-11
+spotify:track:00000000000000075,Track 76,Doja Cat,Album 76,0.1,0.9,0.1,200,0,8,1,-0.8,37,Pop,184000,1,2020-07-15
+spotify:track:00000000000000076,Track 77,Megan Thee Stallion,Album 77,0.1,0.1,0.9,60,-20,4,0,-0.2,28,Electronic,133000,1,2021-01-08
+spotify:track:00000000000000077,Track 78,Billie Eilish,Album 78,0.9,0.1,0.1,200,0,10,1,0.8,100,Hip-Hop,242000,0,2022-01-20
+spotify:track:00000000000000078,Track 79,Drake,Album 79,0.9,0.9,0.1,200,-20,9,0,0.8,83,Electronic,197000,0,2020-03-21
+spotify:track:00000000000000079,Track 80,The Weeknd,Album 80,0.1,0.9,0.9,200,0,1,0,-0.2,87,Alternative,288000,0,2021-11-13
+spotify:track:00000000000000080,Track 81,Dua Lipa,Album 81,0.1,0.1,0.9,200,-20,2,1,-0.8,100,Indie,281000,0,2023-03-16
+spotify:track:00000000000000081,Track 82,Post Malone,Album 82,0.9,0.1,0.9,200,-20,5,1,0.2,49,Electronic,142000,0,2022-08-12
+spotify:track:00000000000000082,Track 83,Billie Eilish,Album 83,0.1,0.9,0.1,200,0,2,0,-0.8,27,Electronic,219000,1,2024-04-12
+spotify:track:00000000000000083,Track 84,The Weeknd,Album 84,0.9,0.9,0.9,60,0,10,0,0.8,46,Indie,172000,0,2023-02-17
+spotify:track:00000000000000084,Track 85,Megan Thee Stallion,Album 85,0.9,0.1,0.1,200,-20,5,0,0.8,34,Country,170000,0,2021-12-16
+spotify:track:00000000000000085,Track 86,Drake,Album 86,0.9,0.9,0.9,60,-20,9,1,0.8,4,Pop,201000,1,2023-08-06
+spotify:track:00000000000000086,Track 87,Bad Bunny,Album 87,0.9,0.1,0.9,60,-20,5,1,0.8,19,Pop,126000,1,2020-07-07
+spotify:track:00000000000000087,Track 88,Olivia Rodrigo,Album 88,0.9,0.9,0.1,60,-20,2,0,0.8,63,Rock,173000,0,2022-08-01
+spotify:track:00000000000000088,Track 89,Ed Sheeran,Album 89,0.1,0.9,0.1,200,0,0,0,-0.8,99,Hip-Hop,291000,1,2024-08-10
+spotify:track:00000000000000089,Track 90,Dua Lipa,Album 90,0.1,0.9,0.9,60,-20,6,0,-0.2,12,Electronic,126000,1,2020-06-20
+spotify:track:00000000000000090,Track 91,Drake,Album 91,0.1,0.1,0.9,60,-20,7,1,-0.8,49,Rock,244000,0,2024-07-27
+spotify:track:00000000000000091,Track 92,Post Malone,Album 92,0.1,0.1,0.1,60,0,4,0,-0.8,44,Alternative,178000,1,2022-05-06
+spotify:track:00000000000000092,Track 93,Lil Nas X,Album 93,0.1,0.9,0.9,200,0,10,1,-0.2,94,Alternative,176000,1,2022-10-03
+spotify:track:00000000000000093,Track 94,Olivia Rodrigo,Album 94,0.9,0.9,0.9,200,0,2,0,0.8,37,Pop,282000,0,2021-01-12
+spotify:track:00000000000000094,Track 95,Taylor Swift,Album 95,0.9,0.1,0.1,60,-20,9,1,0.2,91,Electronic,256000,0,2022-04-16
+spotify:track:00000000000000095,Track 96,The Kid LAROI,Album 96,0.1,0.1,0.9,200,0,4,0,-0.8,100,Rock,238000,0,2022-11-20
+spotify:track:00000000000000096,Track 97,The Weeknd,Album 97,0.1,0.9,0.1,60,0,3,1,-0.8,75,Alternative,181000,0,2021-04-20
+spotify:track:00000000000000097,Track 98,Ariana Grande,Album 98,0.9,0.9,0.9,200,0,4,0,0.2,47,Alternative,288000,0,2022-05-01
+spotify:track:00000000000000098,Track 99,The Weeknd,Album 99,0.9,0.1,0.1,200,0,7,1,0.8,70,Country,166000,1,2020-09-11
+spotify:track:00000000000000099,Track 100,Ed Sheeran,Album 100,0.1,0.9,0.1,200,-20,0,1,-0.2,64,Electronic,204000,0,2024-08-11
+spotify:track:00000000000000100,Track 101,Billie Eilish,Album 101,0.1,0.9,0.9,200,-20,7,0,-0.8,65,Rock,224000,0,2024-06-08
+spotify:track:00000000000000101,Track 102,Lil Nas X,Album 102,0.9,0.1,0.9,200,-20,7,0,0.2,13,Alternative,185000,0,2020-12-24
+spotify:track:00000000000000102,Track 103,Bad Bunny,Album 103,0.9,0.9,0.9,200,-20,7,0,0.8,35,R&B,232000,1,2020-05-10
+spotify:track:00000000000000103,Track 104,Olivia Rodrigo,Album 104,0.9,0.1,0.9,60,0,0,1,0.8,38,Rock,173000,0,2023-10-06
+spotify:track:00000000000000104,Track 105,Ariana Grande,Album 105,0.9,0.9,0.1,60,0,8,0,0.2,11,Pop,211000,0,2022-05-15
+spotify:track:00000000000000105,Track 106,Dua Lipa,Album 106,0.1,0.1,0.1,60,0,10,0,-0.8,59,Alternative,238000,1,2021-05-17
+spotify:track:00000000000000106,Track 107,Ariana Grande,Album 107,0.9,0.9,0.1,60,-20,6,0,0.2,85,Indie,255000,0,2024-09-07
+spotify:track:00000000000000107,Track 108,Bad Bunny,Album 108,0.9,0.1,0.9,60,-20,6,1,0.2,36,Hip-Hop,168000,1,2022-02-18
+spotify:track:00000000000000108,Track 109,Billie Eilish,Album 109,0.9,0.1,0.1,200,0,4,1,0.2,9,Hip-Hop,174000,0,2021-07-23
+spotify:track:00000000000000109,Track 110,Doja Cat,Album 110,0.1,0.1,0.9,60,0,8,0,-0.2,26,Alternative,226000,1,2023-05-06
+spotify:track:00000000000000110,Track 111,Taylor Swift,Album 111,0.9,0.1,0.9,60,-20,10,0,0.8,67,R&B,186000,1,2023-12-25
+spotify:track:00000000000000111,Track 112,The Kid LAROI,Album 112,0.9,0.9,0.9,200,-20,6,0,0.2,17,Alternative,267000,1,2020-06-06
+spotify:track:00000000000000112,Track 113,Drake,Album 113,0.9,0.9,0.1,60,-20,11,0,0.2,9,Electronic,291000,0,2021-09-08
+spotify:track:00000000000000113,Track 114,Lil Nas X,Album 114,0.9,0.1,0.1,200,0,7,1,0.2,76,Alternative,185000,1,2023-02-04
+spotify:track:00000000000000114,Track 115,Post Malone,Album 115,0.9,0.9,0.1,60,0,11,1,0.8,0,Pop,295000,1,2020-09-19
+spotify:track:00000000000000115,Track 116,Post Malone,Album 116,0.9,0.9,0.1,60,-20,0,0,0.8,99,Rock,208000,0,2021-03-14
+spotify:track:00000000000000116,Track 117,Lil Nas X,Album 117,0.1,0.1,0.9,200,0,2,1,-0.2,19,Pop,202000,0,2021-01-23
+spotify:track:00000000000000117,Track 118,Post Malone,Album 118,0.1,0.1,0.9,200,0,0,1,-0.8,65,Alternative,234000,0,2020-05-21
+spotify:track:00000000000000118,Track 119,Ariana Grande,Album 119,0.1,0.9,0.9,200,0,5,1,-0.2,95,Pop,208000,1,2022-02-18
+spotify:track:00000000000000119,Track 120,Dua Lipa,Album 120,0.1,0.9,0.1,200,0,11,0,-0.8,8,Country,142000,0,2023-10-21
+spotify:track:00000000000000120,Track 121,Justin Bieber,Album 121,0.1,0.9,0.9,200,-20,11,1,-0.2,73,R&B,210000,0,2020-04-26
+spotify:track:00000000000000121,Track 122,Doja Cat,Album 122,0.1,0.1,0.9,200,-20,8,1,-0.8,64,Rock,290000,1,2023-08-25
+spotify:track:00000000000000122,Track 123,Taylor Swift,Album 123,0.1,0.9,0.9,200,-20,10,1,-0.2,17,R&B,289000,1,2022-11-22
+spotify:track:00000000000000123,Track 124,Ariana Grande,Album 124,0.9,0.9,0.9,200,-20,0,1,0.2,17,Hip-Hop,151000,1,2024-09-24
+spotify:track:00000000000000124,Track 125,Post Malone,Album 125,0.9,0.1,0.1,60,-20,11,0,0.8,20,Alternative,230000,1,2021-10-05
+spotify:track:00000000000000125,Track 126,Post Malone,Album 126,0.1,0.1,0.9,60,0,5,0,-0.8,2,Pop,153000,1,2020-01-16
+spotify:track:00000000000000126,Track 127,Megan Thee Stallion,Album 127,0.9,0.1,0.9,200,-20,1,0,0.2,38,Pop,221000,1,2021-10-12
+spotify:track:00000000000000127,Track 128,The Weeknd,Album 128,0.9,0.1,0.9,200,-20,11,1,0.2,60,Pop,174000,0,2023-01-01
+spotify:track:00000000000000128,Track 129,Olivia Rodrigo,Album 129,0.1,0.1,0.1,60,-20,4,0,-0.2,53,Electronic,268000,1,2022-03-28
+spotify:track:00000000000000129,Track 130,Bad Bunny,Album 130,0.9,0.9,0.9,200,-20,10,0,0.2,89,Pop,128000,1,2020-07-28
+spotify:track:00000000000000130,Track 131,The Kid LAROI,Album 131,0.1,0.9,0.9,60,-20,2,1,-0.2,20,Rock,185000,1,2022-12-07
+spotify:track:00000000000000131,Track 132,Taylor Swift,Album 132,0.9,0.1,0.9,200,0,1,0,0.2,8,Rock,240000,0,2021-05-04
+spotify:track:00000000000000132,Track 133,Megan Thee Stallion,Album 133,0.1,0.1,0.1,60,-20,10,0,-0.2,62,Hip-Hop,144000,1,2021-06-01
+spotify:track:00000000000000133,Track 134,Billie Eilish,Album 134,0.9,0.9,0.9,200,0,6,0,0.8,3,Alternative,160000,1,2024-05-24
+spotify:track:00000000000000134,Track 135,Taylor Swift,Album 135,0.9,0.9,0.1,200,-20,7,0,0.8,30,Rock,278000,0,2021-06-22
+spotify:track:00000000000000135,Track 136,The Weeknd,Album 136,0.9,0.1,0.1,60,0,0,0,0.8,95,Indie,135000,0,2022-09-23
+spotify:track:00000000000000136,Track 137,Doja Cat,Album 137,0.9,0.9,0.9,200,0,3,0,0.8,97,Country,202000,0,2022-01-17
+spotify:track:00000000000000137,Track 138,Post Malone,Album 138,0.9,0.9,0.1,200,0,6,0,0.2,45,Electronic,233000,0,2023-02-22
+spotify:track:00000000000000138,Track 139,Drake,Album 139,0.1,0.1,0.9,200,0,4,0,-0.8,86,R&B,171000,0,2024-10-23
+spotify:track:00000000000000139,Track 140,Post Malone,Album 140,0.9,0.9,0.1,60,0,9,1,0.2,1,Indie,212000,0,2023-08-01
+spotify:track:00000000000000140,Track 141,Taylor Swift,Album 141,0.1,0.9,0.1,200,-20,1,1,-0.8,87,R&B,199000,0,2024-10-22
+spotify:track:00000000000000141,Track 142,Post Malone,Album 142,0.9,0.9,0.9,60,-20,2,0,0.8,94,Country,193000,0,2020-09-21
+spotify:track:00000000000000142,Track 143,Doja Cat,Album 143,0.1,0.9,0.9,200,-20,2,1,-0.8,82,Electronic,209000,0,2021-10-01
+spotify:track:00000000000000143,Track 144,Taylor Swift,Album 144,0.9,0.9,0.1,60,0,5,1,0.2,44,Hip-Hop,185000,1,2022-06-15
+spotify:track:00000000000000144,Track 145,Taylor Swift,Album 145,0.9,0.9,0.9,60,-20,4,0,0.2,8,R&B,145000,0,2020-05-03
+spotify:track:00000000000000145,Track 146,Drake,Album 146,0.1,0.1,0.1,200,-20,5,0,-0.2,1,Pop,167000,0,2022-10-25
+spotify:track:00000000000000146,Track 147,The Kid LAROI,Album 147,0.9,0.1,0.1,200,-20,9,0,0.8,59,Hip-Hop,170000,1,2024-07-17
+spotify:track:00000000000000147,Track 148,Post Malone,Album 148,0.1,0.1,0.1,200,0,4,0,-0.8,19,Alternative,251000,0,2021-08-07
+spotify:track:00000000000000148,Track 149,Megan Thee Stallion,Album 149,0.1,0.1,0.9,60,-20,2,0,-0.2,9,Pop,206000,1,2024-06-19
+spotify:track:00000000000000149,Track 150,Megan Thee Stallion,Album 150,0.1,0.9,0.1,200,-20,0,1,-0.8,39,Electronic,224000,0,2020-08-08
+spotify:track:00000000000000150,Track 151,Dua Lipa,Album 151,0.9,0.1,0.9,60,-20,11,1,0.8,79,Alternative,161000,1,2022-07-25
+spotify:track:00000000000000151,Track 152,Dua Lipa,Album 152,0.1,0.9,0.1,200,0,0,0,-0.2,54,Hip-Hop,149000,0,2024-09-25
+spotify:track:00000000000000152,Track 153,Doja Cat,Album 153,0.9,0.1,0.1,200,-20,0,1,0.2,84,R&B,170000,1,2022-02-01
+spotify:track:00000000000000153,Track 154,The Kid LAROI,Album 154,0.1,0.1,0.9,60,-20,7,0,-0.8,11,Electronic,187000,1,2024-07-06
+spotify:track:00000000000000154,Track 155,Taylor Swift,Album 155,0.1,0.1,0.9,200,0,4,1,-0.2,88,R&B,136000,0,2022-05-07
+spotify:track:00000000000000155,Track 156,Post Malone,Album 156,0.9,0.9,0.9,60,0,11,1,0.2,8,Pop,258000,1,2020-01-11
+spotify:track:00000000000000156,Track 157,Bad Bunny,Album 157,0.1,0.1,0.1,60,0,7,1,-0.2,2,Alternative,160000,0,2021-11-06
+spotify:track:00000000000000157,Track 158,Ed Sheeran,Album 158,0.9,0.1,0.1,200,-20,0,1,0.2,77,Hip-Hop,286000,1,2020-08-16
+spotify:track:00000000000000158,Track 159,Olivia Rodrigo,Album 159,0.9,0.1,0.9,200,-20,11,1,0.2,98,Pop,275000,1,2022-10-27
+spotify:track:00000000000000159,Track 160,Bad Bunny,Album 160,0.1,0.1,0.9,60,0,5,1,-0.2,96,Rock,267000,0,2020-01-18
+spotify:track:00000000000000160,Track 161,Ed Sheeran,Album 161,0.9,0.9,0.1,200,-20,9,1,0.8,3,Alternative,121000,0,2024-05-17
+spotify:track:00000000000000161,Track 162,Bad Bunny,Album 162,0.9,0.9,0.9,200,-20,11,1,0.8,58,Rock,143000,1,2024-08-23
+spotify:track:00000000000000162,Track 163,Justin Bieber,Album 163,0.9,0.1,0.1,200,-20,1,0,0.2,26,Indie,298000,1,2022-07-17
+spotify:track:00000000000000163,Track 164,Olivia Rodrigo,Album 164,0.1,0.9,0.9,200,-20,2,0,-0.2,52,Alternative,212000,1,2021-12-13
+spotify:track:00000000000000164,Track 165,Dua Lipa,Album 165,0.9,0.9,0.9,200,-20,3,1,0.8,35,R&B,139000,0,2024-01-19
+spotify:track:00000000000000165,Track 166,Taylor Swift,Album 166,0.1,0.1,0.9,200,-20,8,1,-0.8,64,Pop,143000,0,2022-07-21
+spotify:track:00000000000000166,Track 167,Taylor Swift,Album 167,0.1,0.9,0.1,200,-20,8,1,-0.2,87,Hip-Hop,133000,0,2024-05-05
+spotify:track:00000000000000167,Track 168,Doja Cat,Album 168,0.9,0.9,0.1,200,0,6,1,0.2,95,Pop,249000,0,2023-08-19
+spotify:track:00000000000000168,Track 169,Post Malone,Album 169,0.9,0.9,0.1,60,-20,5,1,0.2,80,Indie,161000,0,2024-08-10
+spotify:track:00000000000000169,Track 170,Megan Thee Stallion,Album 170,0.1,0.9,0.9,200,-20,2,0,-0.2,19,Hip-Hop,159000,0,2023-11-14
+spotify:track:00000000000000170,Track 171,Ariana Grande,Album 171,0.9,0.1,0.9,200,-20,10,0,0.2,72,Electronic,197000,1,2020-09-05
+spotify:track:00000000000000171,Track 172,Olivia Rodrigo,Album 172,0.9,0.9,0.9,200,-20,1,0,0.8,67,Indie,133000,1,2020-01-18
+spotify:track:00000000000000172,Track 173,Megan Thee Stallion,Album 173,0.9,0.1,0.9,200,0,3,0,0.8,63,Country,170000,1,2022-03-28
+spotify:track:00000000000000173,Track 174,Drake,Album 174,0.1,0.1,0.9,60,-20,0,0,-0.2,4,R&B,228000,0,2021-02-05
+spotify:track:00000000000000174,Track 175,Ed Sheeran,Album 175,0.9,0.1,0.1,60,0,6,1,0.2,74,Hip-Hop,151000,1,2024-07-17
+spotify:track:00000000000000175,Track 176,Post Malone,Album 176,0.1,0.1,0.1,60,0,11,1,-0.8,56,R&B,149000,0,2023-01-03
+spotify:track:00000000000000176,Track 177,Taylor Swift,Album 177,0.1,0.9,0.1,200,-20,9,1,-0.8,72,Hip-Hop,239000,1,2021-09-15
+spotify:track:00000000000000177,Track 178,Ed Sheeran,Album 178,0.9,0.9,0.1,200,0,11,1,0.2,7,Pop,188000,1,2020-12-24
+spotify:track:00000000000000178,Track 179,Justin Bieber,Album 179,0.9,0.1,0.1,60,0,6,0,0.8,96,Electronic,151000,0,2022-07-25
+spotify:track:00000000000000179,Track 180,The Kid LAROI,Album 180,0.1,0.9,0.1,200,-20,5,1,-0.8,82,Alternative,239000,0,2022-08-05
+spotify:track:00000000000000180,Track 181,Ed Sheeran,Album 181,0.1,0.1,0.9,200,0,5,1,-0.8,84,Electronic,184000,1,2023-12-16
+spotify:track:00000000000000181,Track 182,Bad Bunny,Album 182,0.9,0.1,0.1,60,0,4,1,0.8,32,Country,272000,0,2020-01-04
+spotify:track:00000000000000182,Track 183,Taylor Swift,Album 183,0.1,0.9,0.1,60,0,8,0,-0.2,64,Hip-Hop,241000,1,2022-11-07
+spotify:track:00000000000000183,Track 184,Justin Bieber,Album 184,0.9,0.1,0.9,60,0,3,0,0.2,33,Country,162000,1,2022-11-10
+spotify:track:00000000000000184,Track 185,Billie Eilish,Album 185,0.1,0.9,0.1,60,-20,7,0,-0.2,99,Alternative,207000,1,2022-01-22
+spotify:track:00000000000000185,Track 186,Ed Sheeran,Album 186,0.1,0.9,0.9,60,-20,2,0,-0.2,73,Country,295000,0,2020-01-07
+spotify:track:00000000000000186,Track 187,Taylor Swift,Album 187,0.9,0.9,0.9,200,0,4,0,0.2,36,Rock,189000,1,2022-02-27
+spotify:track:00000000000000187,Track 188,Doja Cat,Album 188,0.1,0.1,0.9,200,-20,7,1,-0.2,37,Electronic,230000,1,2024-06-22
+spotify:track:00000000000000188,Track 189,Ariana Grande,Album 189,0.9,0.1,0.9,60,0,9,1,0.8,34,Indie,253000,1,2022-07-20
+spotify:track:00000000000000189,Track 190,Post Malone,Album 190,0.1,0.1,0.9,200,-20,10,0,-0.8,1,Pop,240000,0,2021-12-19
+spotify:track:00000000000000190,Track 191,Taylor Swift,Album 191,0.1,0.9,0.9,200,0,5,0,-0.2,96,Pop,211000,1,2022-09-11
+spotify:track:00000000000000191,Track 192,Billie Eilish,Album 192,0.9,0.9,0.9,200,0,7,1,0.8,42,Hip-Hop,237000,1,2020-05-13
+spotify:track:00000000000000192,Track 193,The Kid LAROI,Album 193,0.1,0.9,0.9,200,-20,1,0,-0.8,1,Rock,122000,0,2023-04-14
+spotify:track:00000000000000193,Track 194,Doja Cat,Album 194,0.1,0.9,0.1,200,0,7,1,-0.2,5,Pop,244000,0,2021-07-03
+spotify:track:00000000000000194,Track 195,Olivia Rodrigo,Album 195,0.9,0.1,0.1,60,-20,6,0,0.2,8,Pop,136000,1,2022-04-02
+spotify:track:00000000000000195,Track 196,Megan Thee Stallion,Album 196,0.9,0.9,0.1,60,-20,11,0,0.8,47,Country,237000,1,2020-10-06
+spotify:track:00000000000000196,Track 197,Post Malone,Album 197,0.1,0.1,0.1,200,-20,10,1,-0.2,81,Hip-Hop,145000,0,2022-07-06
+spotify:track:00000000000000197,Track 198,Ariana Grande,Album 198,0.9,0.1,0.9,200,-20,6,1,0.2,36,Country,243000,1,2021-05-22
+spotify:track:00000000000000198,Track 199,Dua Lipa,Album 199,0.9,0.9,0.9,60,0,4,0,0.8,0,R&B,288000,0,2020-10-07
+spotify:track:00000000000000199,Track 200,Drake,Album 200,0.1,0.1,0.9,60,0,2,0,-0.2,74,Country,166000,0,2022-01-24

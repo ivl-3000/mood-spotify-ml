@@ -1,0 +1,287 @@
+{
+  "dashboard_name": "Spotify Music Analytics Dashboard",
+  "version": "2.0",
+  "description": "Complete Spotify-style music analytics dashboard",
+  "pages": [
+    {
+      "name": "\ud83c\udfb5 Music Overview",
+      "description": "Main dashboard with key metrics and top songs",
+      "background": "#191414",
+      "visuals": [
+        {
+          "type": "KPI Cards",
+          "name": "Performance Metrics",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 12,
+            "height": 3
+          },
+          "style": "spotify_card",
+          "measures": [
+            "Total Tracks",
+            "Average Valence",
+            "Average Energy",
+            "Happy Songs %",
+            "Sad Songs %"
+          ]
+        },
+        {
+          "type": "Top 10 Happy Songs",
+          "name": "\ud83c\udf89 Your Happy Anthems",
+          "position": {
+            "x": 0,
+            "y": 3,
+            "width": 6,
+            "height": 6
+          },
+          "style": "spotify_table",
+          "color": "#1DB954"
+        },
+        {
+          "type": "Top 10 Sad Songs",
+          "name": "\ud83d\ude22 Your Emotional Tracks",
+          "position": {
+            "x": 6,
+            "y": 3,
+            "width": 6,
+            "height": 6
+          },
+          "style": "spotify_table",
+          "color": "#4ECDC4"
+        },
+        {
+          "type": "Genre Trends",
+          "name": "\ud83d\udcc8 Your Musical Evolution",
+          "position": {
+            "x": 0,
+            "y": 9,
+            "width": 8,
+            "height": 4
+          },
+          "style": "spotify_chart"
+        },
+        {
+          "type": "Mood Distribution",
+          "name": "\ud83c\udfad Your Emotional Landscape",
+          "position": {
+            "x": 8,
+            "y": 9,
+            "width": 4,
+            "height": 4
+          },
+          "style": "spotify_chart"
+        }
+      ]
+    },
+    {
+      "name": "\ud83c\udfaf Mood Analysis",
+      "description": "Deep dive into mood patterns and sentiment analysis",
+      "background": "#191414",
+      "visuals": [
+        {
+          "type": "Mood Timeline",
+          "name": "\ud83d\udcca Your Emotional Journey",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 12,
+            "height": 5
+          },
+          "style": "spotify_chart"
+        },
+        {
+          "type": "Sentiment Heatmap",
+          "name": "\ud83d\udd25 Emotional Intensity Map",
+          "position": {
+            "x": 0,
+            "y": 5,
+            "width": 6,
+            "height": 4
+          },
+          "style": "spotify_heatmap"
+        },
+        {
+          "type": "Audio Features Correlation",
+          "name": "\ud83c\udfb5 The Science of Sound",
+          "position": {
+            "x": 6,
+            "y": 5,
+            "width": 6,
+            "height": 4
+          },
+          "style": "spotify_correlation"
+        }
+      ]
+    },
+    {
+      "name": "\ud83c\udfa7 Interactive Playlist",
+      "description": "Mood-based playlist generator and user insights",
+      "background": "#191414",
+      "visuals": [
+        {
+          "type": "Mood Filter",
+          "name": "\ud83c\udfaf Create Your Perfect Playlist",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 12,
+            "height": 4
+          },
+          "style": "spotify_interactive",
+          "moods": [
+            {
+              "name": "Happy",
+              "color": "#1DB954",
+              "icon": "\ud83d\ude0a"
+            },
+            {
+              "name": "Sad",
+              "color": "#4ECDC4",
+              "icon": "\ud83d\ude22"
+            },
+            {
+              "name": "Energetic",
+              "color": "#FF6B6B",
+              "icon": "\u26a1"
+            },
+            {
+              "name": "Chill",
+              "color": "#96CEB4",
+              "icon": "\ud83c\udf19"
+            },
+            {
+              "name": "Romantic",
+              "color": "#DDA0DD",
+              "icon": "\ud83d\udc95"
+            },
+            {
+              "name": "Angry",
+              "color": "#FF6B6B",
+              "icon": "\ud83d\ude20"
+            }
+          ]
+        },
+        {
+          "type": "User Personas",
+          "name": "\ud83d\udc65 Your Music Personality",
+          "position": {
+            "x": 0,
+            "y": 4,
+            "width": 6,
+            "height": 6
+          },
+          "style": "spotify_chart"
+        },
+        {
+          "type": "Playlist Comparison",
+          "name": "\ud83d\udcca Before vs After",
+          "position": {
+            "x": 6,
+            "y": 4,
+            "width": 6,
+            "height": 6
+          },
+          "style": "spotify_chart"
+        }
+      ]
+    },
+    {
+      "name": "\ud83d\udcca Analytics Deep Dive",
+      "description": "Advanced analytics and performance metrics",
+      "background": "#191414",
+      "visuals": [
+        {
+          "type": "Precision Recall Analysis",
+          "name": "\ud83c\udfaf Recommendation Accuracy",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 5
+          },
+          "style": "spotify_chart"
+        },
+        {
+          "type": "Coverage Analysis",
+          "name": "\ud83d\udcc8 Music Discovery Coverage",
+          "position": {
+            "x": 6,
+            "y": 0,
+            "width": 6,
+            "height": 5
+          },
+          "style": "spotify_chart"
+        },
+        {
+          "type": "Diversity Analysis",
+          "name": "\ud83c\udf08 Musical Diversity",
+          "position": {
+            "x": 0,
+            "y": 5,
+            "width": 6,
+            "height": 5
+          },
+          "style": "spotify_chart"
+        },
+        {
+          "type": "Novelty Analysis",
+          "name": "\u2728 Discovery & Novelty",
+          "position": {
+            "x": 6,
+            "y": 5,
+            "width": 6,
+            "height": 5
+          },
+          "style": "spotify_chart"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "column": "playlist_name",
+      "type": "Slicer",
+      "style": "spotify_slicer",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "width": 3,
+        "height": 1
+      }
+    },
+    {
+      "column": "mood_category",
+      "type": "Slicer",
+      "style": "spotify_slicer",
+      "position": {
+        "x": 3,
+        "y": 0,
+        "width": 3,
+        "height": 1
+      }
+    },
+    {
+      "column": "date_range",
+      "type": "Date Range",
+      "style": "spotify_date_range",
+      "position": {
+        "x": 6,
+        "y": 0,
+        "width": 3,
+        "height": 1
+      }
+    },
+    {
+      "column": "energy_level",
+      "type": "Slicer",
+      "style": "spotify_slicer",
+      "position": {
+        "x": 9,
+        "y": 0,
+        "width": 3,
+        "height": 1
+      }
+    }
+  ]
+}
