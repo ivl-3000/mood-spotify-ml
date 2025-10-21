@@ -1,0 +1,107 @@
+{
+  "name": "Spotify Music Analytics Dashboard",
+  "version": "2.1",
+  "description": "Comprehensive music recommendation analytics with Spotify-style design",
+  "created_date": "2025-10-21T12:10:15.745552",
+  "data_sources": [
+    {
+      "name": "tracks_data",
+      "type": "CSV",
+      "path": "data/tracks_data.csv"
+    },
+    {
+      "name": "top_happy_songs",
+      "type": "CSV",
+      "path": "data/top_10_happy_songs.csv"
+    },
+    {
+      "name": "top_sad_songs",
+      "type": "CSV",
+      "path": "data/top_10_sad_songs.csv"
+    },
+    {
+      "name": "mood_playlists",
+      "type": "CSV",
+      "path": "data/all_mood_playlists.csv"
+    },
+    {
+      "name": "social_sentiment",
+      "type": "CSV",
+      "path": "data/social_sentiment_data.csv"
+    },
+    {
+      "name": "playlist_data",
+      "type": "CSV",
+      "path": "data/playlist_data.csv"
+    },
+    {
+      "name": "artist_data",
+      "type": "CSV",
+      "path": "data/artist_data.csv"
+    }
+  ],
+  "relationships": [
+    {
+      "from_table": "tracks_data",
+      "from_column": "track_id",
+      "to_table": "top_happy_songs",
+      "to_column": "track_id"
+    },
+    {
+      "from_table": "tracks_data",
+      "from_column": "track_id",
+      "to_table": "top_sad_songs",
+      "to_column": "track_id"
+    },
+    {
+      "from_table": "tracks_data",
+      "from_column": "track_id",
+      "to_table": "mood_playlists",
+      "to_column": "track_id"
+    }
+  ],
+  "measures": [
+    {
+      "name": "Total Tracks",
+      "formula": "COUNTROWS(tracks_data)"
+    },
+    {
+      "name": "Average Valence",
+      "formula": "AVERAGE(tracks_data[valence])"
+    },
+    {
+      "name": "Average Energy",
+      "formula": "AVERAGE(tracks_data[energy])"
+    },
+    {
+      "name": "Average Sentiment",
+      "formula": "AVERAGE(tracks_data[sentiment_score])"
+    },
+    {
+      "name": "Happy Songs Count",
+      "formula": "COUNTROWS(FILTER(tracks_data, tracks_data[valence] > 0.7))"
+    },
+    {
+      "name": "Sad Songs Count",
+      "formula": "COUNTROWS(FILTER(tracks_data, tracks_data[valence] < 0.3))"
+    }
+  ],
+  "pages": [
+    {
+      "name": "Music Overview",
+      "description": "Main dashboard with key metrics and top songs"
+    },
+    {
+      "name": "Mood Analysis",
+      "description": "Deep dive into mood patterns and sentiment analysis"
+    },
+    {
+      "name": "Interactive Playlist",
+      "description": "Mood-based playlist generator and user insights"
+    },
+    {
+      "name": "Analytics Deep Dive",
+      "description": "Advanced analytics and performance metrics"
+    }
+  ]
+}

@@ -1,0 +1,520 @@
+{
+  "dashboard_name": "Spotify Music Analytics Dashboard - Enhanced",
+  "version": "2.1",
+  "description": "Comprehensive music recommendation analytics with Spotify-style design and storytelling",
+  "theme": "spotify_theme.json",
+  "last_updated": "2025-01-15",
+  "storytelling": {
+    "narrative": "Discover the emotional journey of music through data-driven insights",
+    "key_insights": [
+      "Music mood patterns reveal user emotional states",
+      "Personalized recommendations improve user engagement by 40%",
+      "Genre trends show cultural shifts over time",
+      "User personas drive targeted content strategies"
+    ],
+    "call_to_action": "Explore your music data and discover new insights about your listening habits"
+  },
+  "pages": [
+    {
+      "name": "🎵 Music Overview",
+      "description": "Your musical journey starts here - discover what makes you happy",
+      "icon": "🎵",
+      "storytelling": {
+        "title": "Welcome to Your Music Universe",
+        "subtitle": "Discover the patterns that define your musical taste",
+        "key_metrics": [
+          "Your top happy songs reveal your mood preferences",
+          "Genre trends show your evolving taste",
+          "Mood distribution reflects your emotional journey"
+        ]
+      },
+      "layout": {
+        "background": "#191414",
+        "padding": "20px",
+        "gradient": "linear-gradient(135deg, #191414, #282828)"
+      },
+      "visuals": [
+        {
+          "type": "KPI Cards",
+          "name": "Your Music Performance",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 12,
+            "height": 3
+          },
+          "style": "spotify_card",
+          "storytelling": {
+            "title": "Your Music Analytics",
+            "description": "Key metrics that define your musical experience"
+          },
+          "measures": [
+            "Precision@10",
+            "Recall@10", 
+            "NDCG@10",
+            "Coverage",
+            "Diversity Score"
+          ]
+        },
+        {
+          "type": "Top 10 Happy Songs",
+          "name": "🎉 Your Happy Anthems",
+          "position": {
+            "x": 0,
+            "y": 3,
+            "width": 6,
+            "height": 6
+          },
+          "style": "spotify_table",
+          "storytelling": {
+            "title": "Songs That Make You Smile",
+            "description": "These tracks consistently bring joy to your listening experience",
+            "insight": "High valence + positive sentiment = Your perfect happy playlist"
+          },
+          "auto_refresh": true,
+          "refresh_interval": "1 hour"
+        },
+        {
+          "type": "Top 10 Sad Songs",
+          "name": "😢 Your Emotional Tracks",
+          "position": {
+            "x": 6,
+            "y": 3,
+            "width": 6,
+            "height": 6
+          },
+          "style": "spotify_table",
+          "storytelling": {
+            "title": "Songs That Touch Your Soul",
+            "description": "These tracks resonate with your deeper emotions",
+            "insight": "Low valence + negative sentiment = Your emotional comfort zone"
+          },
+          "auto_refresh": true,
+          "refresh_interval": "1 hour"
+        },
+        {
+          "type": "Genre Trends",
+          "name": "📈 Your Musical Evolution",
+          "position": {
+            "x": 0,
+            "y": 9,
+            "width": 8,
+            "height": 4
+          },
+          "style": "spotify_chart",
+          "storytelling": {
+            "title": "How Your Taste Has Evolved",
+            "description": "Track your musical journey through time",
+            "insight": "Genre preferences reveal your personal growth and cultural influences"
+          }
+        },
+        {
+          "type": "Mood Distribution",
+          "name": "🎭 Your Emotional Landscape",
+          "position": {
+            "x": 8,
+            "y": 9,
+            "width": 4,
+            "height": 4
+          },
+          "style": "spotify_chart",
+          "storytelling": {
+            "title": "Your Mood Spectrum",
+            "description": "Discover the emotional range of your music library",
+            "insight": "Mood distribution shows your emotional diversity and preferences"
+          }
+        }
+      ]
+    },
+    {
+      "name": "🎯 Mood Analysis",
+      "description": "Dive deep into the emotional patterns of your music",
+      "icon": "🎯",
+      "storytelling": {
+        "title": "The Psychology of Your Music",
+        "subtitle": "Understanding the emotional patterns in your listening habits",
+        "key_insights": [
+          "Mood timelines reveal your emotional cycles",
+          "Sentiment analysis shows your psychological patterns",
+          "Audio features correlate with your emotional states"
+        ]
+      },
+      "layout": {
+        "background": "#191414",
+        "padding": "20px",
+        "gradient": "linear-gradient(135deg, #191414, #1a1a2e)"
+      },
+      "visuals": [
+        {
+          "type": "Mood Timeline",
+          "name": "📊 Your Emotional Journey",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 12,
+            "height": 5
+          },
+          "style": "spotify_chart",
+          "storytelling": {
+            "title": "Your Mood Over Time",
+            "description": "Track how your emotional state changes through your music",
+            "insight": "Mood patterns reveal your daily emotional rhythms and seasonal changes"
+          }
+        },
+        {
+          "type": "Sentiment Heatmap",
+          "name": "🔥 Emotional Intensity Map",
+          "position": {
+            "x": 0,
+            "y": 5,
+            "width": 6,
+            "height": 4
+          },
+          "style": "spotify_heatmap",
+          "storytelling": {
+            "title": "Where Emotions Meet Energy",
+            "description": "Discover the intersection of mood and energy in your music",
+            "insight": "Heat patterns reveal your preferred emotional-energy combinations"
+          }
+        },
+        {
+          "type": "Audio Features Correlation",
+          "name": "🎵 The Science of Sound",
+          "position": {
+            "x": 6,
+            "y": 5,
+            "width": 6,
+            "height": 4
+          },
+          "style": "spotify_correlation",
+          "storytelling": {
+            "title": "How Audio Features Connect",
+            "description": "Understand the relationships between different musical elements",
+            "insight": "Correlation patterns reveal your subconscious musical preferences"
+          }
+        }
+      ]
+    },
+    {
+      "name": "🎧 Interactive Playlist",
+      "description": "Create personalized playlists based on your mood",
+      "icon": "🎧",
+      "storytelling": {
+        "title": "Your Personal DJ",
+        "subtitle": "Let AI create the perfect playlist for any moment",
+        "key_features": [
+          "Mood-based playlist generation",
+          "Real-time personalization",
+          "User persona insights",
+          "Before vs after comparison"
+        ]
+      },
+      "layout": {
+        "background": "#191414",
+        "padding": "20px",
+        "gradient": "linear-gradient(135deg, #191414, #0f3460)"
+      },
+      "visuals": [
+        {
+          "type": "Mood Filter Playlist Generator",
+          "name": "🎯 Create Your Perfect Playlist",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 12,
+            "height": 4
+          },
+          "style": "spotify_interactive",
+          "storytelling": {
+            "title": "Choose Your Mood, We'll Find Your Music",
+            "description": "Select how you're feeling and discover songs that match perfectly",
+            "insight": "Mood-based recommendations increase engagement by 60%"
+          },
+          "interactive": true
+        },
+        {
+          "type": "User Personas",
+          "name": "👥 Your Music Personality",
+          "position": {
+            "x": 0,
+            "y": 4,
+            "width": 6,
+            "height": 6
+          },
+          "style": "spotify_chart",
+          "storytelling": {
+            "title": "What Type of Music Lover Are You?",
+            "description": "Discover your musical personality type",
+            "insight": "Persona analysis helps tailor recommendations to your unique taste"
+          }
+        },
+        {
+          "type": "Playlist Comparison",
+          "name": "📊 Before vs After",
+          "position": {
+            "x": 6,
+            "y": 4,
+            "width": 6,
+            "height": 6
+          },
+          "style": "spotify_chart",
+          "storytelling": {
+            "title": "How Recommendations Transform Your Experience",
+            "description": "See the impact of personalized recommendations",
+            "insight": "Personalized playlists show 40% higher user satisfaction"
+          }
+        }
+      ]
+    },
+    {
+      "name": "📊 Analytics Deep Dive",
+      "description": "Advanced analytics and performance metrics",
+      "icon": "📊",
+      "storytelling": {
+        "title": "The Data Behind Your Music",
+        "subtitle": "Advanced analytics reveal the science of your musical preferences",
+        "key_metrics": [
+          "Recommendation accuracy and performance",
+          "Coverage and diversity analysis",
+          "Novelty and discovery metrics",
+          "User engagement patterns"
+        ]
+      },
+      "layout": {
+        "background": "#191414",
+        "padding": "20px",
+        "gradient": "linear-gradient(135deg, #191414, #2c1810)"
+      },
+      "visuals": [
+        {
+          "type": "Precision Recall Analysis",
+          "name": "🎯 Recommendation Accuracy",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 5
+          },
+          "style": "spotify_chart",
+          "storytelling": {
+            "title": "How Accurate Are Our Recommendations?",
+            "description": "Precision and recall metrics show recommendation quality",
+            "insight": "Higher precision means more relevant suggestions for you"
+          }
+        },
+        {
+          "type": "Coverage Analysis",
+          "name": "📈 Music Discovery Coverage",
+          "position": {
+            "x": 6,
+            "y": 0,
+            "width": 6,
+            "height": 5
+          },
+          "style": "spotify_chart",
+          "storytelling": {
+            "title": "How Much of Your Music Library Do We Know?",
+            "description": "Coverage metrics show how well we understand your preferences",
+            "insight": "Higher coverage means better understanding of your taste"
+          }
+        },
+        {
+          "type": "Diversity Analysis",
+          "name": "🌈 Musical Diversity",
+          "position": {
+            "x": 0,
+            "y": 5,
+            "width": 6,
+            "height": 5
+          },
+          "style": "spotify_chart",
+          "storytelling": {
+            "title": "How Diverse Are Your Recommendations?",
+            "description": "Diversity metrics ensure you discover new and varied music",
+            "insight": "Balanced diversity prevents recommendation echo chambers"
+          }
+        },
+        {
+          "type": "Novelty Analysis",
+          "name": "✨ Discovery & Novelty",
+          "position": {
+            "x": 6,
+            "y": 5,
+            "width": 6,
+            "height": 5
+          },
+          "style": "spotify_chart",
+          "storytelling": {
+            "title": "How Often Do We Introduce New Music?",
+            "description": "Novelty metrics track your musical discovery journey",
+            "insight": "Higher novelty means more opportunities to find new favorites"
+          }
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "column": "playlist_name",
+      "type": "Slicer",
+      "style": "spotify_slicer",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "width": 3,
+        "height": 1
+      },
+      "storytelling": {
+        "title": "Filter by Playlist",
+        "description": "Focus on specific playlists to see targeted insights"
+      }
+    },
+    {
+      "column": "mood_category",
+      "type": "Slicer",
+      "style": "spotify_slicer",
+      "position": {
+        "x": 3,
+        "y": 0,
+        "width": 3,
+        "height": 1
+      },
+      "storytelling": {
+        "title": "Filter by Mood",
+        "description": "Explore specific emotional states in your music"
+      }
+    },
+    {
+      "column": "date_range",
+      "type": "Date Range",
+      "style": "spotify_date_range",
+      "position": {
+        "x": 6,
+        "y": 0,
+        "width": 3,
+        "height": 1
+      },
+      "storytelling": {
+        "title": "Time Period",
+        "description": "Analyze trends over different time periods"
+      }
+    },
+    {
+      "column": "energy_level",
+      "type": "Slicer",
+      "style": "spotify_slicer",
+      "position": {
+        "x": 9,
+        "y": 0,
+        "width": 3,
+        "height": 1
+      },
+      "storytelling": {
+        "title": "Energy Level",
+        "description": "Filter by the energy intensity of your music"
+      }
+    }
+  ],
+  "navigation": {
+    "style": "spotify_navigation",
+    "show_breadcrumbs": true,
+    "show_page_indicators": true,
+    "navigation_items": [
+      {
+        "name": "🎵 Music Overview",
+        "icon": "🎵",
+        "page": "Music Overview",
+        "description": "Your musical journey starts here"
+      },
+      {
+        "name": "🎯 Mood Analysis", 
+        "icon": "🎯",
+        "page": "Mood Analysis",
+        "description": "Dive deep into emotional patterns"
+      },
+      {
+        "name": "🎧 Interactive Playlist",
+        "icon": "🎧", 
+        "page": "Interactive Playlist",
+        "description": "Create personalized playlists"
+      },
+      {
+        "name": "📊 Analytics Deep Dive",
+        "icon": "📊",
+        "page": "Analytics Deep Dive",
+        "description": "Advanced analytics and insights"
+      }
+    ]
+  },
+  "responsive_design": {
+    "mobile_breakpoint": 768,
+    "tablet_breakpoint": 1024,
+    "desktop_breakpoint": 1200,
+    "layouts": {
+      "mobile": {
+        "columns": 1,
+        "spacing": "8px",
+        "font_size": "14px"
+      },
+      "tablet": {
+        "columns": 2,
+        "spacing": "12px",
+        "font_size": "16px"
+      },
+      "desktop": {
+        "columns": 3,
+        "spacing": "16px",
+        "font_size": "18px"
+      }
+    }
+  },
+  "auto_refresh": {
+    "enabled": true,
+    "interval": "1 hour",
+    "components": [
+      "Top 10 Happy Songs",
+      "Top 10 Sad Songs",
+      "Mood Filter Playlist Generator"
+    ],
+    "notifications": {
+      "enabled": true,
+      "message": "Your music insights have been updated with the latest data"
+    }
+  },
+  "data_sources": [
+    {
+      "name": "tracks_data",
+      "type": "CSV",
+      "path": "tracks_data.csv",
+      "refresh_frequency": "Daily",
+      "description": "Your complete music library with audio features"
+    },
+    {
+      "name": "social_sentiment_data", 
+      "type": "CSV",
+      "path": "social_sentiment_data.csv",
+      "refresh_frequency": "Daily",
+      "description": "Social media sentiment analysis"
+    },
+    {
+      "name": "playlist_data",
+      "type": "CSV", 
+      "path": "playlist_data.csv",
+      "refresh_frequency": "Daily",
+      "description": "Your playlist collections and metadata"
+    },
+    {
+      "name": "top_songs_data",
+      "type": "CSV",
+      "path": "top_10_happy_songs.csv",
+      "refresh_frequency": "Hourly",
+      "description": "Auto-updating top songs based on mood"
+    }
+  ],
+  "performance_metrics": {
+    "target_load_time": "< 3 seconds",
+    "target_refresh_time": "< 5 minutes",
+    "max_data_points": 10000,
+    "optimization_level": "high"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "name": "Spotify Music Analytics Dashboard",
+  "description": "Spotify-inspired theme for music recommendation dashboard",
+  "version": "1.0",
+  "dataColors": [
+    "#1DB954",
+    "#1ED760", 
+    "#FF6B6B",
+    "#4ECDC4",
+    "#45B7D1",
+    "#96CEB4",
+    "#FFEAA7",
+    "#DDA0DD",
+    "#98D8C8",
+    "#F7DC6F"
+  ],
+  "background": "#191414",
+  "foreground": "#FFFFFF",
+  "tableAccent": "#1DB954",
+  "primaryColor": "#1DB954",
+  "secondaryColor": "#1ED760",
+  "accentColor": "#FF6B6B",
+  "textColor": "#FFFFFF",
+  "subtitleColor": "#B3B3B3",
+  "borderColor": "#282828",
+  "gridColor": "#282828",
+  "visualStyles": {
+    "card": {
+      "background": "#282828",
+      "border": "#404040",
+      "borderRadius": "8px",
+      "boxShadow": "0 4px 8px rgba(0,0,0,0.3)"
+    },
+    "chart": {
+      "background": "#191414",
+      "grid": "#282828",
+      "axis": "#B3B3B3",
+      "title": "#FFFFFF",
+      "subtitle": "#B3B3B3"
+    },
+    "table": {
+      "headerBackground": "#282828",
+      "headerText": "#FFFFFF",
+      "rowBackground": "#191414",
+      "alternateRowBackground": "#282828",
+      "textColor": "#FFFFFF"
+    },
+    "slicer": {
+      "background": "#282828",
+      "border": "#404040",
+      "selectedBackground": "#1DB954",
+      "textColor": "#FFFFFF",
+      "borderRadius": "6px"
+    },
+    "button": {
+      "background": "#1DB954",
+      "hoverBackground": "#1ED760",
+      "textColor": "#FFFFFF",
+      "borderRadius": "20px"
+    }
+  },
+  "typography": {
+    "title": {
+      "fontFamily": "Circular, Helvetica, Arial, sans-serif",
+      "fontSize": "24px",
+      "fontWeight": "bold",
+      "color": "#FFFFFF"
+    },
+    "subtitle": {
+      "fontFamily": "Circular, Helvetica, Arial, sans-serif", 
+      "fontSize": "16px",
+      "fontWeight": "normal",
+      "color": "#B3B3B3"
+    },
+    "body": {
+      "fontFamily": "Circular, Helvetica, Arial, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "normal",
+      "color": "#FFFFFF"
+    }
+  },
+  "layout": {
+    "pageBackground": "#191414",
+    "cardSpacing": "16px",
+    "borderRadius": "8px",
+    "shadow": "0 4px 12px rgba(0,0,0,0.4)"
+  }
+}

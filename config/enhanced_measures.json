@@ -1,0 +1,53 @@
+{
+  "measures": {
+    "Top 10 Happy Songs": {
+      "Happiness Score": "tracks_data[valence] + tracks_data[sentiment_score]",
+      "Happy Rank": "RANKX(ALL(tracks_data), tracks_data[valence] + tracks_data[sentiment_score], , DESC)",
+      "Is Top Happy": "IF(tracks_data[Happiness Score] >= TOPN(10, ALL(tracks_data), tracks_data[Happiness Score], DESC)[10][Happiness Score], 1, 0)"
+    },
+    "Top 10 Sad Songs": {
+      "Sadness Score": "ABS(tracks_data[valence] + tracks_data[sentiment_score])",
+      "Sad Rank": "RANKX(ALL(tracks_data), ABS(tracks_data[valence] + tracks_data[sentiment_score]), , DESC)",
+      "Is Top Sad": "IF(tracks_data[Sadness Score] >= TOPN(10, ALL(tracks_data), tracks_data[Sadness Score], DESC)[10][Sadness Score], 1, 0)"
+    },
+    "Mood Filter": {
+      "Happy Score": "IF(tracks_data[valence] > 0.7 && tracks_data[sentiment_score] > 0.2 && tracks_data[energy] > 0.6, 1, 0)",
+      "Sad Score": "IF(tracks_data[valence] < 0.3 && tracks_data[sentiment_score] < 0.1 && tracks_data[energy] < 0.4, 1, 0)",
+      "Energetic Score": "IF(tracks_data[energy] > 0.8 && tracks_data[danceability] > 0.7 && tracks_data[tempo] > 120, 1, 0)",
+      "Chill Score": "IF(tracks_data[energy] < 0.5 && tracks_data[acousticness] > 0.5 && tracks_data[valence] >= 0.3 && tracks_data[valence] <= 0.7, 1, 0)",
+      "Romantic Score": "IF(tracks_data[valence] >= 0.4 && tracks_data[valence] <= 0.8 && tracks_data[acousticness] > 0.3 && tracks_data[tempo] >= 60 && tracks_data[tempo] <= 100, 1, 0)",
+      "Angry Score": "IF(tracks_data[energy] > 0.7 && tracks_data[valence] < 0.4 && tracks_data[tempo] > 140, 1, 0)"
+    },
+    "Playlist Generation": {
+      "Mood Match Score": "SWITCH(SELECTEDVALUE(mood_filter[mood]), 'Happy', tracks_data[Happy Score], 'Sad', tracks_data[Sad Score], 'Energetic', tracks_data[Energetic Score], 'Chill', tracks_data[Chill Score], 'Romantic', tracks_data[Romantic Score], 'Angry', tracks_data[Angry Score], 0)",
+      "Diversity Score": "1 - (COUNTROWS(VALUES(tracks_data[artist_name])) / COUNTROWS(tracks_data))",
+      "Playlist Score": "tracks_data[Mood Match Score] * 0.8 + tracks_data[popularity] * 0.2",
+      "Final Rank": "RANKX(ALL(tracks_data), tracks_data[Playlist Score], , DESC)"
+    },
+    "Enhanced KPIs": {
+      "Precision@5": "DIVIDE(COUNTROWS(FILTER(tracks_data, tracks_data[Final Rank] <= 5 && tracks_data[user_clicked] = 1)), 5)",
+      "Precision@10": "DIVIDE(COUNTROWS(FILTER(tracks_data, tracks_data[Final Rank] <= 10 && tracks_data[user_clicked] = 1)), 10)",
+      "Precision@20": "DIVIDE(COUNTROWS(FILTER(tracks_data, tracks_data[Final Rank] <= 20 && tracks_data[user_clicked] = 1)), 20)",
+      "Recall@5": "DIVIDE(COUNTROWS(FILTER(tracks_data, tracks_data[Final Rank] <= 5 && tracks_data[user_clicked] = 1)), COUNTROWS(FILTER(tracks_data, tracks_data[user_clicked] = 1)))",
+      "Recall@10": "DIVIDE(COUNTROWS(FILTER(tracks_data, tracks_data[Final Rank] <= 10 && tracks_data[user_clicked] = 1)), COUNTROWS(FILTER(tracks_data, tracks_data[user_clicked] = 1)))",
+      "Recall@20": "DIVIDE(COUNTROWS(FILTER(tracks_data, tracks_data[Final Rank] <= 20 && tracks_data[user_clicked] = 1)), COUNTROWS(FILTER(tracks_data, tracks_data[user_clicked] = 1)))",
+      "NDCG@10": "SUMX(TOPN(10, tracks_data, tracks_data[Final Rank]), DIVIDE(tracks_data[user_clicked], LOG(tracks_data[Final Rank] + 1, 2)))",
+      "Coverage": "DIVIDE(COUNTROWS(DISTINCT(tracks_data[track_id])), COUNTROWS(ALL(tracks_data[track_id])))",
+      "Diversity": "AVERAGE(tracks_data[Diversity Score])",
+      "Novelty": "AVERAGE(tracks_data[novelty_score])"
+    },
+    "Auto Refresh": {
+      "Last Updated": "NOW()",
+      "Refresh Status": "IF(HOUR(NOW()) = HOUR(tracks_data[last_updated]), 'Up to Date', 'Needs Refresh')",
+      "Next Refresh": "DATEADD(tracks_data[last_updated], 1, HOUR)"
+    }
+  },
+  "calculated_columns": {
+    "tracks_data": {
+      "mood_category": "SWITCH(TRUE(), tracks_data[valence] > 0.7 && tracks_data[sentiment_score] > 0.2, 'Happy', tracks_data[valence] < 0.3 && tracks_data[sentiment_score] < 0.1, 'Sad', tracks_data[energy] > 0.8 && tracks_data[danceability] > 0.7, 'Energetic', tracks_data[energy] < 0.5 && tracks_data[acousticness] > 0.5, 'Chill', tracks_data[valence] >= 0.4 && tracks_data[valence] <= 0.8 && tracks_data[acousticness] > 0.3, 'Romantic', tracks_data[energy] > 0.7 && tracks_data[valence] < 0.4, 'Angry', 'Neutral')",
+      "energy_level": "SWITCH(TRUE(), tracks_data[energy] > 0.8, 'High', tracks_data[energy] > 0.5, 'Medium', 'Low')",
+      "tempo_category": "SWITCH(TRUE(), tracks_data[tempo] > 140, 'Fast', tracks_data[tempo] > 100, 'Medium', 'Slow')",
+      "genre_category": "SWITCH(TRUE(), tracks_data[acousticness] > 0.7, 'Acoustic', tracks_data[danceability] > 0.7, 'Dance', tracks_data[energy] > 0.8, 'Electronic', tracks_data[valence] > 0.7, 'Pop', 'Alternative')"
+    }
+  }
+}

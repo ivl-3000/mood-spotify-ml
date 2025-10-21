@@ -1,0 +1,118 @@
+{
+  "filter_id": "mood_interactive_filter",
+  "filter_type": "mood_selection",
+  "style": "spotify_interactive",
+  "layout": {
+    "type": "grid",
+    "columns": 3,
+    "rows": 2,
+    "spacing": "16px"
+  },
+  "mood_options": {
+    "Happy": {
+      "name": "Happy",
+      "display_name": "\ud83d\ude0a Happy",
+      "color": "#1DB954",
+      "description": "Upbeat, positive, energetic songs",
+      "criteria": {
+        "valence": "> 0.7",
+        "sentiment_score": "> 0.2",
+        "energy": "> 0.6"
+      },
+      "icon": "\ud83d\ude0a",
+      "background_gradient": "linear-gradient(135deg, #1DB954, #1ED760)"
+    },
+    "Sad": {
+      "name": "Sad",
+      "display_name": "\ud83d\ude22 Sad",
+      "color": "#4ECDC4",
+      "description": "Melancholic, emotional, introspective songs",
+      "criteria": {
+        "valence": "< 0.3",
+        "sentiment_score": "< 0.1",
+        "energy": "< 0.4"
+      },
+      "icon": "\ud83d\ude22",
+      "background_gradient": "linear-gradient(135deg, #4ECDC4, #96CEB4)"
+    },
+    "Energetic": {
+      "name": "Energetic",
+      "display_name": "\u26a1 Energetic",
+      "color": "#FF6B6B",
+      "description": "High-energy, fast-paced, danceable tracks",
+      "criteria": {
+        "energy": "> 0.8",
+        "danceability": "> 0.7",
+        "tempo": "> 120"
+      },
+      "icon": "\u26a1",
+      "background_gradient": "linear-gradient(135deg, #FF6B6B, #FF8E8E)"
+    },
+    "Chill": {
+      "name": "Chill",
+      "display_name": "\ud83c\udf19 Chill",
+      "color": "#96CEB4",
+      "description": "Relaxed, ambient, easy-listening music",
+      "criteria": {
+        "energy": "< 0.5",
+        "acousticness": "> 0.5",
+        "valence": "BETWEEN 0.3 AND 0.7"
+      },
+      "icon": "\ud83c\udf19",
+      "background_gradient": "linear-gradient(135deg, #96CEB4, #B8E6B8)"
+    },
+    "Romantic": {
+      "name": "Romantic",
+      "display_name": "\ud83d\udc95 Romantic",
+      "color": "#DDA0DD",
+      "description": "Love songs, emotional, intimate tracks",
+      "criteria": {
+        "valence": "BETWEEN 0.4 AND 0.8",
+        "acousticness": "> 0.3",
+        "tempo": "BETWEEN 60 AND 100"
+      },
+      "icon": "\ud83d\udc95",
+      "background_gradient": "linear-gradient(135deg, #DDA0DD, #E6B8E6)"
+    },
+    "Angry": {
+      "name": "Angry",
+      "display_name": "\ud83d\ude20 Angry",
+      "color": "#FF6B6B",
+      "description": "Aggressive, intense, high-energy tracks",
+      "criteria": {
+        "energy": "> 0.7",
+        "valence": "< 0.4",
+        "tempo": "> 140"
+      },
+      "icon": "\ud83d\ude20",
+      "background_gradient": "linear-gradient(135deg, #FF6B6B, #FF8E8E)"
+    }
+  },
+  "playlist_generation": {
+    "max_tracks": 20,
+    "diversity_factor": 0.3,
+    "popularity_weight": 0.2,
+    "mood_weight": 0.8,
+    "auto_refresh": true,
+    "refresh_interval": "1 hour"
+  },
+  "output_format": {
+    "type": "table",
+    "columns": [
+      "track_name",
+      "artist_name",
+      "mood_score",
+      "energy",
+      "valence",
+      "danceability",
+      "tempo",
+      "popularity"
+    ],
+    "sorting": "mood_score DESC"
+  },
+  "interactions": {
+    "on_mood_select": "generate_playlist",
+    "on_playlist_generate": "update_visualizations",
+    "on_track_click": "show_track_details"
+  }
+}

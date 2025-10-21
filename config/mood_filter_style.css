@@ -1,0 +1,168 @@
+
+/* Spotify-style Mood Filter CSS */
+.mood-filter-container {
+    background: linear-gradient(135deg, #191414, #282828);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    font-family: 'Circular', Helvetica, Arial, sans-serif;
+}
+
+.mood-filter-title {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.mood-filter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.mood-option {
+    background: linear-gradient(135deg, var(--mood-color), var(--mood-color-light));
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.mood-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.mood-option.selected {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(29, 185, 84, 0.4);
+}
+
+.mood-option.happy {
+    --mood-color: #1DB954;
+    --mood-color-light: #1ED760;
+}
+
+.mood-option.sad {
+    --mood-color: #4ECDC4;
+    --mood-color-light: #96CEB4;
+}
+
+.mood-option.energetic {
+    --mood-color: #FF6B6B;
+    --mood-color-light: #FF8E8E;
+}
+
+.mood-option.chill {
+    --mood-color: #96CEB4;
+    --mood-color-light: #B8E6B8;
+}
+
+.mood-option.romantic {
+    --mood-color: #DDA0DD;
+    --mood-color-light: #E6B8E6;
+}
+
+.mood-option.angry {
+    --mood-color: #FF6B6B;
+    --mood-color-light: #FF8E8E;
+}
+
+.playlist-generator {
+    background: #282828;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.playlist-title {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.playlist-description {
+    color: #B3B3B3;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.generate-button {
+    background: #1DB954;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.generate-button:hover {
+    background: #1ED760;
+    transform: translateY(-1px);
+}
+
+.playlist-results {
+    margin-top: 20px;
+    background: #191414;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.playlist-track {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #282828;
+    color: #FFFFFF;
+}
+
+.playlist-track:last-child {
+    border-bottom: none;
+}
+
+.track-info {
+    flex: 1;
+}
+
+.track-name {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.track-artist {
+    color: #B3B3B3;
+    font-size: 14px;
+}
+
+.track-metrics {
+    display: flex;
+    gap: 16px;
+    color: #B3B3B3;
+    font-size: 12px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .mood-filter-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .mood-filter-grid {
+        grid-template-columns: 1fr;
+    }
+}

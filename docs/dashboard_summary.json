@@ -1,0 +1,41 @@
+{
+  "dashboard_name": "Spotify Music Analytics Dashboard",
+  "version": "2.0",
+  "created_date": "2025-10-21T12:00:50.100610",
+  "features": [
+    "Top 10 Happy Songs (Auto-updating)",
+    "Top 10 Sad Songs (Auto-updating)",
+    "Interactive Mood Filter",
+    "Spotify-style Design",
+    "Real-time Playlist Generation",
+    "Advanced Analytics",
+    "Responsive Layout",
+    "Auto-refresh Functionality"
+  ],
+  "pages": [
+    "\ud83c\udfb5 Music Overview",
+    "\ud83c\udfaf Mood Analysis",
+    "\ud83c\udfa7 Interactive Playlist",
+    "\ud83d\udcca Analytics Deep Dive"
+  ],
+  "data_sources": [
+    "tracks_data.csv",
+    "social_sentiment_data.csv",
+    "playlist_data.csv",
+    "top_10_happy_songs.csv",
+    "top_10_sad_songs.csv",
+    "all_mood_playlists.csv"
+  ],
+  "configuration_files": [
+    "spotify_theme.json",
+    "enhanced_dashboard_layout.json",
+    "final_dashboard_config.json",
+    "enhanced_measures.json",
+    "top_songs_visualizations.json",
+    "mood_filter_config.json"
+  ],
+  "styling_files": [
+    "mood_filter_style.css",
+    "spotify_theme.json"
+  ]
+}

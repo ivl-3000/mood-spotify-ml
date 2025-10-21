@@ -1,0 +1,225 @@
+{
+  "Top 10 Happy Songs": {
+    "type": "Table",
+    "description": "Auto-updating list of top 10 happiest songs based on valence and sentiment",
+    "data_source": "tracks_data",
+    "columns": [
+      {
+        "name": "Rank",
+        "type": "Integer",
+        "calculation": "RANKX(ALL(tracks_data), tracks_data[valence] + tracks_data[sentiment_score], , DESC)"
+      },
+      {
+        "name": "Track Name",
+        "type": "Text",
+        "field": "track_name"
+      },
+      {
+        "name": "Artist",
+        "type": "Text", 
+        "field": "artist_name"
+      },
+      {
+        "name": "Valence Score",
+        "type": "Decimal",
+        "field": "valence",
+        "format": "0.00"
+      },
+      {
+        "name": "Sentiment Score",
+        "type": "Decimal",
+        "field": "sentiment_score",
+        "format": "0.00"
+      },
+      {
+        "name": "Happiness Score",
+        "type": "Decimal",
+        "calculation": "tracks_data[valence] + tracks_data[sentiment_score]",
+        "format": "0.00"
+      },
+      {
+        "name": "Energy",
+        "type": "Decimal",
+        "field": "energy",
+        "format": "0.00"
+      },
+      {
+        "name": "Danceability",
+        "type": "Decimal",
+        "field": "danceability",
+        "format": "0.00"
+      }
+    ],
+    "filters": [
+      {
+        "field": "valence",
+        "condition": "> 0.5"
+      },
+      {
+        "field": "sentiment_score", 
+        "condition": "> 0.1"
+      }
+    ],
+    "sort": {
+      "field": "Happiness Score",
+      "direction": "DESC"
+    },
+    "limit": 10,
+    "auto_refresh": true,
+    "refresh_interval": "1 hour"
+  },
+  "Top 10 Sad Songs": {
+    "type": "Table",
+    "description": "Auto-updating list of top 10 saddest songs based on valence and sentiment",
+    "data_source": "tracks_data",
+    "columns": [
+      {
+        "name": "Rank",
+        "type": "Integer",
+        "calculation": "RANKX(ALL(tracks_data), tracks_data[valence] + tracks_data[sentiment_score], , ASC)"
+      },
+      {
+        "name": "Track Name",
+        "type": "Text",
+        "field": "track_name"
+      },
+      {
+        "name": "Artist",
+        "type": "Text",
+        "field": "artist_name"
+      },
+      {
+        "name": "Valence Score",
+        "type": "Decimal",
+        "field": "valence",
+        "format": "0.00"
+      },
+      {
+        "name": "Sentiment Score",
+        "type": "Decimal",
+        "field": "sentiment_score",
+        "format": "0.00"
+      },
+      {
+        "name": "Sadness Score",
+        "type": "Decimal",
+        "calculation": "ABS(tracks_data[valence] + tracks_data[sentiment_score])",
+        "format": "0.00"
+      },
+      {
+        "name": "Energy",
+        "type": "Decimal",
+        "field": "energy",
+        "format": "0.00"
+      },
+      {
+        "name": "Acousticness",
+        "type": "Decimal",
+        "field": "acousticness",
+        "format": "0.00"
+      }
+    ],
+    "filters": [
+      {
+        "field": "valence",
+        "condition": "< 0.5"
+      },
+      {
+        "field": "sentiment_score",
+        "condition": "< 0.1"
+      }
+    ],
+    "sort": {
+      "field": "Sadness Score",
+      "direction": "DESC"
+    },
+    "limit": 10,
+    "auto_refresh": true,
+    "refresh_interval": "1 hour"
+  },
+  "Mood Filter Playlist Generator": {
+    "type": "Interactive Filter",
+    "description": "User selects mood and gets personalized playlist",
+    "data_source": "tracks_data",
+    "mood_categories": [
+      {
+        "name": "Happy",
+        "color": "#1DB954",
+        "icon": "😊",
+        "criteria": {
+          "valence": "> 0.7",
+          "sentiment_score": "> 0.2",
+          "energy": "> 0.6"
+        }
+      },
+      {
+        "name": "Sad",
+        "color": "#4ECDC4",
+        "icon": "😢",
+        "criteria": {
+          "valence": "< 0.3",
+          "sentiment_score": "< 0.1",
+          "energy": "< 0.4"
+        }
+      },
+      {
+        "name": "Energetic",
+        "color": "#FF6B6B",
+        "icon": "⚡",
+        "criteria": {
+          "energy": "> 0.8",
+          "danceability": "> 0.7",
+          "tempo": "> 120"
+        }
+      },
+      {
+        "name": "Chill",
+        "color": "#96CEB4",
+        "icon": "🌙",
+        "criteria": {
+          "energy": "< 0.5",
+          "acousticness": "> 0.5",
+          "valence": "0.3-0.7"
+        }
+      },
+      {
+        "name": "Romantic",
+        "color": "#DDA0DD",
+        "icon": "💕",
+        "criteria": {
+          "valence": "0.4-0.8",
+          "acousticness": "> 0.3",
+          "tempo": "60-100"
+        }
+      },
+      {
+        "name": "Angry",
+        "color": "#FF6B6B",
+        "icon": "😠",
+        "criteria": {
+          "energy": "> 0.7",
+          "valence": "< 0.4",
+          "tempo": "> 140"
+        }
+      }
+    ],
+    "playlist_generation": {
+      "max_tracks": 20,
+      "diversity_factor": 0.3,
+      "popularity_weight": 0.2,
+      "mood_weight": 0.8
+    },
+    "output_format": {
+      "type": "Table",
+      "columns": [
+        "track_name",
+        "artist_name", 
+        "mood_score",
+        "energy",
+        "valence",
+        "danceability",
+        "tempo"
+      ]
+    }
+  }
+}

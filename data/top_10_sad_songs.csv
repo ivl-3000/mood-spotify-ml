@@ -1,0 +1,11 @@
+track_id,track_name,artist_name,valence,energy,danceability,tempo,loudness,key,mode,sentiment_score,popularity,genre,duration_ms,explicit,release_date,sadness_score,rank,mood_icon,color
+track_072,Dancing Queen,Night Riders,0.186,0.837,0.332,103.6,-15.5,4,0,-0.767,51,Pop,217945,0,2024-03-26,0.581,1,😢,#4ECDC4
+track_083,City Lights,Morning Glory,0.067,0.405,0.497,160.8,-17.9,5,0,-0.642,39,Rock,297900,0,2017-12-14,0.575,2,😢,#4ECDC4
+track_032,Winter Nights,Night Riders,0.196,0.069,0.101,62.6,-18.1,2,0,-0.757,73,Rock,185953,0,2024-02-13,0.5609999999999999,3,😢,#4ECDC4
+track_078,Heartbreak,Wild Fire,0.104,0.8,0.179,151.4,-15.2,1,0,-0.654,45,Jazz,132175,1,2021-08-20,0.55,4,😢,#4ECDC4
+track_053,Night Drive,Sweet Dreams,0.089,0.121,0.461,88.9,-12.7,9,0,-0.607,46,Pop,294293,0,2022-11-07,0.518,5,😢,#4ECDC4
+track_022,Peaceful Mind,Angry Rockers,0.268,0.485,0.373,115.3,-3.1,2,1,-0.758,22,Rock,176958,0,2018-11-10,0.49,6,😢,#4ECDC4
+track_099,Evening Wine,Romantic Duo,0.253,0.005,0.696,66.8,-9.3,4,1,-0.734,76,Pop,245991,0,2019-08-03,0.481,7,😢,#4ECDC4
+track_043,Morning Coffee,Angry Rockers,0.17,0.647,0.388,92.1,-14.7,4,0,-0.644,62,Pop,289160,0,2020-03-25,0.474,8,😢,#4ECDC4
+track_029,Summer Breeze,Chill Vibes,0.046,0.041,0.855,158.5,-10.5,9,1,-0.505,32,Hip-Hop,179101,0,2020-02-20,0.459,9,😢,#4ECDC4
+track_056,Energy Boost,Chill Vibes,0.269,0.377,0.02,105.1,-15.8,9,1,-0.728,24,Electronic,127561,0,2025-03-03,0.45899999999999996,10,😢,#4ECDC4

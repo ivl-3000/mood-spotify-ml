@@ -1,0 +1,11 @@
+track_id,track_name,artist_name,valence,energy,danceability,tempo,loudness,key,mode,sentiment_score,popularity,genre,duration_ms,explicit,release_date,happiness_score,rank,mood_icon,color
+track_018,Ocean Waves,The Happy Band,0.94,0.974,0.284,102.8,-10.3,2,1,0.797,67,Pop,211412,1,2021-08-16,1.737,1,🎉,#1DB954
+track_021,Sunshine Days,Chill Vibes,0.915,0.37,0.015,190.0,-11.4,4,0,0.778,62,Classical,235668,1,2020-04-24,1.693,2,🎉,#1DB954
+track_097,City Lights,Wild Fire,0.995,0.174,0.396,166.2,-6.1,7,0,0.689,88,Pop,222979,1,2022-01-10,1.684,3,🎉,#1DB954
+track_010,Summer Breeze,The Happy Band,0.871,0.804,0.187,185.0,-9.2,9,0,0.738,0,Pop,257848,1,2023-02-22,1.609,4,🎉,#1DB954
+track_080,Mountain High,Angry Rockers,0.911,0.625,0.336,175.5,-12.7,6,1,0.698,93,Pop,250273,0,2017-08-17,1.609,5,🎉,#1DB954
+track_036,Ocean Waves,Romantic Duo,0.951,0.573,0.632,122.8,-14.1,8,1,0.604,22,R&B,147192,0,2019-11-26,1.555,6,🎉,#1DB954
+track_005,Sunshine Days,Sweet Dreams,0.845,0.747,0.54,142.1,-0.7,8,0,0.681,70,Pop,240151,0,2020-04-03,1.526,7,🎉,#1DB954
+track_041,Sad Times,Sweet Dreams,0.978,0.556,0.323,66.1,-1.5,4,1,0.532,17,Country,137640,0,2021-07-25,1.51,8,🎉,#1DB954
+track_039,Summer Breeze,Energy Crew,0.753,0.376,0.084,168.8,-8.8,10,1,0.744,44,Classical,260507,1,2022-11-05,1.4969999999999999,9,🎉,#1DB954
+track_038,Chill Vibes,The Happy Band,0.701,0.073,0.822,158.9,-18.4,4,1,0.792,85,Electronic,291334,0,2022-03-07,1.4929999999999999,10,🎉,#1DB954
